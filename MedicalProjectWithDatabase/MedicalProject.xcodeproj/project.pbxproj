@@ -96,13 +96,13 @@
 		F4443ADE1DF2DFDA00800C92 /* MedicalProject */ = {
 			isa = PBXGroup;
 			children = (
-				AB9116E92213DE5B00D6DD90 /* Customers.swift */,
 				F4443AF11DF2E34F00800C92 /* SignUpViewController.swift */,
 				F4443AF21DF2E34F00800C92 /* HomeViewController.swift */,
 				F4443AF31DF2E34F00800C92 /* LoginViewController.swift */,
 				F4443AF41DF2E34F00800C92 /* ResetPasswordViewController.swift */,
 				F4443ADF1DF2DFDA00800C92 /* AppDelegate.swift */,
 				F4443AE31DF2DFDA00800C92 /* Main.storyboard */,
+				AB9116E92213DE5B00D6DD90 /* Customers.swift */,
 				9C19D1BD221050F200E45E82 /* CustomerInfoViewController.swift */,
 				9C19D1B7220FF49200E45E82 /* CustomerTableViewCell.swift */,
 				F4443AE61DF2DFDA00800C92 /* Assets.xcassets */,
