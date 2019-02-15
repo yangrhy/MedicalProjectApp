@@ -10,5 +10,6 @@ target 'MedicalProject' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'RealmSwift'
+  pod 'JTAppleCalendar', '~>7.0'
 
 end
