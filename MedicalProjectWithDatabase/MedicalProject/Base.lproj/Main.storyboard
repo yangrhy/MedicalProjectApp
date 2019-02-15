@@ -518,10 +518,10 @@
             </objects>
             <point key="canvasLocation" x="3317.5999999999999" y="1716.7916041979013"/>
         </scene>
-        <!--Calendar-->
+        <!--Ib Calendar Data Source-->
         <scene sceneID="YbI-cf-sy6">
             <objects>
-                <viewController title="Calendar" id="n2U-VS-69b" sceneMemberID="viewController">
+                <viewController title="Calendar" id="n2U-VS-69b" customClass="CalendarViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rtD-Bf-TKz"/>
                         <viewControllerLayoutGuide type="bottom" id="3FP-V2-xLC"/>
@@ -530,29 +530,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6eL-9y-vjL">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6eL-9y-vjL" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
                                 <rect key="frame" x="0.0" y="64" width="375" height="293"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qyU-WE-Z2H">
-                                    <size key="itemSize" width="112" height="112"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="293" id="am2-fg-Idn"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qyU-WE-Z2H">
+                                    <size key="itemSize" width="116" height="116"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="KI5-hn-JgJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="112" height="112"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomCell" id="KI5-hn-JgJ" customClass="CustomCell" customModule="MedicalProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="116"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="112" height="112"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="116" height="116"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eyb-LG-Rrv">
+                                                    <rect key="frame" x="37" y="47.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="Eyb-LG-Rrv" firstAttribute="centerX" secondItem="KI5-hn-JgJ" secondAttribute="centerX" id="bIR-x7-Or1"/>
+                                            <constraint firstItem="Eyb-LG-Rrv" firstAttribute="centerY" secondItem="KI5-hn-JgJ" secondAttribute="centerY" id="dNP-qp-n4N"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="Eyb-LG-Rrv" id="iau-yn-4uI"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="ibCalendarDataSource" destination="n2U-VS-69b" id="mDF-ak-Gom"/>
+                                    <outlet property="ibCalendarDelegate" destination="n2U-VS-69b" id="SxL-d4-Nd8"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6eL-9y-vjL" firstAttribute="top" secondItem="rtD-Bf-TKz" secondAttribute="bottom" id="352-hZ-VCb"/>
+                            <constraint firstItem="6eL-9y-vjL" firstAttribute="leading" secondItem="4wY-hi-pns" secondAttribute="leading" id="7VE-vS-nwc"/>
+                            <constraint firstAttribute="trailing" secondItem="6eL-9y-vjL" secondAttribute="trailing" id="UWh-eb-tgX"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJq-Xe-278" userLabel="First Responder" sceneMemberID="firstResponder"/>
