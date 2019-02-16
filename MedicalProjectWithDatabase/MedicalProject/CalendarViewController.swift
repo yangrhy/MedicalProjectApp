@@ -51,9 +51,8 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         myCustomCell.dateLabel.text = cellState.text
     }
     
-    func calendar(_calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        guard let validCell = cell as? CustomCell else {return}
-        
+    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+        guard let validCell = cell as? CustomCell else { return }
         validCell.viewSelected.isHidden = false
     }
 }
