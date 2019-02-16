@@ -24,7 +24,7 @@ class CalendarViewController: UIViewController {
 
 }
 
-extension CalendarViewController: JTAppleCalendarViewDataSource {
+extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource {
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
         formatter.dateFormat = "yyyy MM dd"
         formatter.timeZone = Calendar.current.timeZone
@@ -36,9 +36,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource {
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
         return parameters
     }
-}
-extension CalendarViewController: JTAppleCalendarViewDelegate {
-    // need both functions to display the cell
+    
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
         
@@ -49,11 +47,5 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
         let myCustomCell = cell as! CustomCell
         myCustomCell.dateLabel.text = cellState.text
-    }
-    
-    func calendar(_calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        guard let validCell = cell as? CustomCell else {return}
-        
-        validCell.viewSelected.isHidden = false
     }
 }
