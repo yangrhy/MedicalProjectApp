@@ -30,7 +30,7 @@ class CustomerInfoViewController: UIViewController, UITableViewDelegate, UITable
         
         let customerInfoString: String?
         
-        customerInfoString = "Customer Name: \(eachCustomer.custName!)\nCustomer Address: \(eachCustomer.custAddy!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nDelivery Status: \(eachCustomer.delivStat!)"
+        customerInfoString = "Customer Name: \(eachCustomer.custName!)\nCustomer Address: \(eachCustomer.custAddy!)\nCustomer Number: \(eachCustomer.custNum!)\nEquipment Type: \(eachCustomer.choice!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nDelivery Status: \(eachCustomer.delivStat!)"
         
         cell.textLabel?.text = customerInfoString
         /*cell.lblCustAddress.text = eachCustomer.custAddy
@@ -55,13 +55,16 @@ class CustomerInfoViewController: UIViewController, UITableViewDelegate, UITable
                 let custObj = customers.value as? [String: AnyObject]
                 let custName = custObj?["customerName"]
                 let custAddress = custObj?["customerAddress"]
+                let custNum = custObj?["customerNumber"]
+                let choice = custObj?["choice"]
                 let delivDate = custObj?["date"]
                 let delivTime = custObj?["time"]
-                let delivStatus = custObj?["deliveryStatus"]
+                let delivStatus = custObj?["status"]
+                
                 // Retrieving Data from Firebase IS WORKING!
                 
                 
-                let customer = Customers(custName: custName as! String?, custAddy: custAddress as! String?, deliv: delivDate as! String?, time: delivTime as! String?, delivStat: delivStatus as! String?)
+                let customer = Customers(custName: custName as! String?, custAddy: custAddress as! String?, custNum: custNum as! String?, choice: choice as! String?, deliv: delivDate as! String?, time: delivTime as! String?, delivStat: delivStatus as! String?)
                 
                 self.customerList.append(customer)
             }
