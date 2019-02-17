@@ -11,6 +11,13 @@ import JTAppleCalendar
 class CalendarViewController: UIViewController {
     let formatter = DateFormatter()
 
+    @IBOutlet weak var calendarView: JTAppleCalendarView!
+    
+    func setupCalendarView() {
+        calendarView.minimumLineSpacing = 0
+        calendarView.minimumInteritemSpacing = 0
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -43,6 +50,12 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
         
         cell.dateLabel.text = cellState.text
+        if cellState.isSelected {
+            cell.viewSelected.isHidden = false
+        }
+        else {
+            cell.viewSelected.isHidden = true
+        }
         return cell
     }
     
@@ -54,5 +67,10 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         guard let validCell = cell as? CustomCell else { return }
         validCell.viewSelected.isHidden = false
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
+    guard let validCell = cell as? CustomCell else { return }
+    validCell.viewSelected.isHidden = true
     }
 }

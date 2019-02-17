@@ -691,6 +691,9 @@
                             <constraint firstItem="9vT-E7-izN" firstAttribute="top" secondItem="rtD-Bf-TKz" secondAttribute="bottom" id="woe-Aw-fVm"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calendarView" destination="6eL-9y-vjL" id="fQa-Ge-XNr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rJq-Xe-278" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
