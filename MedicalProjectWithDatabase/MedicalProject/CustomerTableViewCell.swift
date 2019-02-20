@@ -9,13 +9,6 @@ import UIKit
 
 class CustomerTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var lblCustName: UILabel!
-    @IBOutlet weak var lblCustAddress: UILabel!
-    @IBOutlet weak var lblDelivDate: UILabel!
-    @IBOutlet weak var lblDelivTime: UILabel!
-    @IBOutlet weak var lblDelivStatus: UILabel!
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
