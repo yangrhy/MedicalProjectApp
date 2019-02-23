@@ -7,13 +7,14 @@
 
 import UIKit
 import JTAppleCalendar
-
+import Firebase
 class CalendarViewController: UIViewController {
     let formatter = DateFormatter()
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var month: UILabel!
     @IBOutlet weak var year: UILabel!
 
+    @IBOutlet weak var deliveryTableView: UITableView!
     
     
     override func viewDidLoad() {
@@ -85,7 +86,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource {
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         
-        let startDate = formatter.date(from: "2019 01 01")!
+        let startDate = Date()
         let endDate = formatter.date(from: "2019 12 31")!
         
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)

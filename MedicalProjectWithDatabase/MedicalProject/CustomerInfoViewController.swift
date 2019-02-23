@@ -22,6 +22,7 @@ class CustomerInfoViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomerTableViewCell
         
+        // allows new line for each string of information
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
 
@@ -33,10 +34,6 @@ class CustomerInfoViewController: UIViewController, UITableViewDelegate, UITable
         customerInfoString = "Customer Name: \(eachCustomer.custName!)\nCustomer Address: \(eachCustomer.custAddy!)\nCustomer Number: \(eachCustomer.custNum!)\nEquipment Type: \(eachCustomer.choice!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nDelivery Status: \(eachCustomer.delivStat!)"
         
         cell.textLabel?.text = customerInfoString
-        /*cell.lblCustAddress.text = eachCustomer.custAddy
-        cell.lblDelivDate.text = eachCustomer.deliv
-        cell.lblDelivTime.text = eachCustomer.time
-        cell.lblDelivStatus.text = eachCustomer.delivStat */
         
         return cell
     }
@@ -60,9 +57,6 @@ class CustomerInfoViewController: UIViewController, UITableViewDelegate, UITable
                 let delivDate = custObj?["date"]
                 let delivTime = custObj?["time"]
                 let delivStatus = custObj?["status"]
-                
-                // Retrieving Data from Firebase IS WORKING!
-                
                 
                 let customer = Customers(custName: custName as! String?, custAddy: custAddress as! String?, custNum: custNum as! String?, choice: choice as! String?, deliv: delivDate as! String?, time: delivTime as! String?, delivStat: delivStatus as! String?)
                 
