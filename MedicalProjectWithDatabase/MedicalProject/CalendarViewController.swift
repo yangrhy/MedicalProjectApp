@@ -32,6 +32,8 @@ class CalendarViewController: UIViewController {
         // calendar spacing
         calendarView.minimumLineSpacing = 0
         calendarView.minimumInteritemSpacing = 0
+        calendarView.scrollToDate(Date())
+        
         // Setup labels
         calendarView.visibleDates { (visibleDates) in
             self.setupCalendarLabels(from: visibleDates)
@@ -86,7 +88,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource {
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         
-        let startDate = Date()
+        let startDate = formatter.date(from: "2019 1 1")!
         let endDate = formatter.date(from: "2019 12 31")!
         
         let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
