@@ -32,7 +32,8 @@ class CalendarViewController: UIViewController {
         // calendar spacing
         calendarView.minimumLineSpacing = 0
         calendarView.minimumInteritemSpacing = 0
-        calendarView.scrollToDate(Date())
+        calendarView.scrollToDate(Date(), animateScroll: false)
+        calendarView.selectDates([Date()])
         
         // Setup labels
         calendarView.visibleDates { (visibleDates) in
@@ -57,6 +58,8 @@ class CalendarViewController: UIViewController {
         guard let cell = view as? CustomCell else { return }
         if cellState.isSelected {
             cell.viewSelected.isHidden = false
+            
+            // make a call to a created function for listing information into dataviewtable to show delivery schedule
         }
         else {
             cell.viewSelected.isHidden = true
