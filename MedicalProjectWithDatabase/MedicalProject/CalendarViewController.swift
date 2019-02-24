@@ -163,6 +163,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleSelectedCell(view: cell, cellState: cellState)
         handleCellDateColor(view: cell, cellState: cellState)
+        deliveryList.removeAll()
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
@@ -187,7 +188,7 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
         
         let customerInfoString: String?
         
-        customerInfoString = "Customer Name: \(eachCustomer.custName!)\nCustomer Address: \(eachCustomer.custAddy!)\nCustomer Number: \(eachCustomer.custNum!)\nEquipment Type: \(eachCustomer.choice!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nDelivery Status: \(eachCustomer.delivStat!)"
+        customerInfoString = "Delivery Time: \(eachCustomer.time!)\nDelivery Date: \(eachCustomer.deliv!)\nCustomer Name: \(eachCustomer.custName!)\nCustomer Address: \(eachCustomer.custAddy!)\nCustomer Number: \(eachCustomer.custNum!)\nEquipment Type: \(eachCustomer.choice!)\nDelivery Status: \(eachCustomer.delivStat!)"
         
         cell.textLabel?.text = customerInfoString
         
