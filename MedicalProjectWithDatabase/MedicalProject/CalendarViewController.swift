@@ -8,6 +8,7 @@
 import UIKit
 import JTAppleCalendar
 import Firebase
+
 class CalendarViewController: UIViewController {
     let formatter = DateFormatter()
     @IBOutlet weak var calendarView: JTAppleCalendarView!
@@ -16,10 +17,16 @@ class CalendarViewController: UIViewController {
 
     @IBOutlet weak var deliveryTableView: UITableView!
     
+    var deliveryList = [Customers]()
     
+    var deliveryInfo: DatabaseReference!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCalendarView()
+        // Do any additional setup after loading the view.
+        deliveryTableView.delegate = self
+        deliveryTableView.dataSource = self
         // Do any additional setup after loading the view.
     }
     
@@ -28,6 +35,35 @@ class CalendarViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    func retrieveData (date: Date) {
+        let dateFormatter = DateFormatter()
+        // Now we specify the display format, e.g. "27-08-2015
+        dateFormatter.dateFormat = "dd-MM-YYYY"
+        // Now we get the date from the UIDatePicker and convert it to a string
+        
+        deliveryInfo = Database.database().reference().child("customer")
+        
+        
+        deliveryInfo?.observeSingleEvent(of: .value) { (snapshot:DataSnapshot) in
+            for customers in snapshot.children.allObjects as! [DataSnapshot] {
+                let custObj = customers.value as? [String: AnyObject]
+                if (custObj?["date"] as? String == dateFormatter.string(from: date)){
+                    let custName = custObj?["customerName"]
+                    let custAddress = custObj?["customerAddress"]
+                    let custNum = custObj?["customerNumber"]
+                    let choice = custObj?["choice"]
+                    let delivDate = custObj?["date"]
+                    let delivTime = custObj?["time"]
+                    let delivStatus = custObj?["status"]
+                    
+                    let customer = Customers(custName: custName as! String?, custAddy: custAddress as! String?, custNum: custNum as! String?, choice: choice as! String?, deliv: delivDate as! String?, time: delivTime as! String?, delivStat: delivStatus as! String?)
+                    
+                    self.deliveryList.append(customer)
+                }
+            }
+            self.deliveryTableView?.reloadData()
+        }
+    }
     func setupCalendarView() {
         // calendar spacing
         calendarView.minimumLineSpacing = 0
@@ -59,7 +95,9 @@ class CalendarViewController: UIViewController {
         if cellState.isSelected {
             cell.viewSelected.isHidden = false
             
-            // make a call to a created function for listing information into dataviewtable to show delivery schedule
+            // make a call here to a created function for listing information into dataviewtable to show delivery schedule
+            retrieveData(date: cellState.date)
+
         }
         else {
             cell.viewSelected.isHidden = true
@@ -120,7 +158,6 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleSelectedCell(view: cell, cellState: cellState)
         handleCellDateColor(view: cell, cellState: cellState)
-
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
@@ -130,5 +167,30 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
         setupCalendarLabels(from: visibleDates)
+    }
+}
+
+extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return deliveryList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "deliveryCell", for: indexPath) as! CustomerTableViewCell
+        
+        // allows new line for each string of information
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
+        
+        let eachCustomer:Customers
+        eachCustomer = deliveryList[indexPath.row]
+        
+        let customerInfoString: String?
+        
+        customerInfoString = "Customer Name: \(eachCustomer.custName!)\nCustomer Address: \(eachCustomer.custAddy!)\nCustomer Number: \(eachCustomer.custNum!)\nEquipment Type: \(eachCustomer.choice!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nDelivery Status: \(eachCustomer.delivStat!)"
+        
+        cell.textLabel?.text = customerInfoString
+        
+        return cell
     }
 }
