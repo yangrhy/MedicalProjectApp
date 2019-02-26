@@ -8,12 +8,11 @@
 import UIKit
 import Firebase
 
-
 class CustomerInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var customerInfo: DatabaseReference!
     var customerList = [Customers]()
-    
+
     @IBOutlet weak var customerTableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,7 +24,7 @@ class CustomerInfoViewController: UIViewController, UITableViewDelegate, UITable
         
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
-        
+
         let eachCustomer:Customers
         eachCustomer = customerList[indexPath.row]
         
@@ -35,14 +34,14 @@ class CustomerInfoViewController: UIViewController, UITableViewDelegate, UITable
         
         cell.textLabel?.text = customerInfoString
         /*cell.lblCustAddress.text = eachCustomer.custAddy
-         cell.lblDelivDate.text = eachCustomer.deliv
-         cell.lblDelivTime.text = eachCustomer.time
-         cell.lblDelivStatus.text = eachCustomer.delivStat */
+        cell.lblDelivDate.text = eachCustomer.deliv
+        cell.lblDelivTime.text = eachCustomer.time
+        cell.lblDelivStatus.text = eachCustomer.delivStat */
         
         return cell
     }
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         customerTableView.delegate = self
@@ -75,7 +74,14 @@ class CustomerInfoViewController: UIViewController, UITableViewDelegate, UITable
                 // Retrieving Data from Firebase IS WORKING!
                 
                 
-               let customer = Customers(custName: custName as! String?, custAddy: custAddress as! String?, custNum: custNum as! String?, choice: choice as! String?, deliv: delivDate as! String?, time: delivTime as! String?, delivStat: delivStatus as! String?, bed: bedQuant as! String?, bloodGlucose: bloodQuant as! String?, iVSolution: iVQuant as! String?, infusion: infusionQunat as! String?, nebulizer: nebulizerQuant as! String?,pulseOx: pulseQuant as! String?, syringe: syringeQuant as! String?, thermometer: thermomQuant as! String?,walker: walkerQuant as! String?)
+                let customer = Customers(custName: custName as! String?, custAddy: custAddress as! String?, custNum: custNum as! String?, choice: choice as! String?, deliv: delivDate as! String?, time: delivTime as! String?, delivStat: delivStatus as! String?, bed: bedQuant as! String?, bloodGlucose: bloodQuant as! String?,
+                    iVSolution: iVQuant as! String?,
+                    infusion: infusionQunat as! String?,
+                    nebulizer: nebulizerQuant as! String?,
+                    pulseOx: pulseQuant as! String?,
+                    syringe: syringeQuant as! String?,
+                    thermometer: thermomQuant as! String?,
+                    walker: walkerQuant as! String?)
                 
                 self.customerList.append(customer)
             }
