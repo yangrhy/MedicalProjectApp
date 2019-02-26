@@ -28,7 +28,7 @@ class Customers{
     var walker: String?
     
     init(custName:String?, custAddy:String?, custNum:String?, choice:String?, deliv:String?, time:String?, delivStat:String?, bed: String?, bloodGlucose: String?,iVSolution: String?, infusion: String?, nebulizer: String?, pulseOx: String?, syringe: String?, thermometer: String?,
-        walker: String? ){
+         walker: String? ){
         
         self.custName = custName;
         self.custAddy = custAddy;

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38A981FD221DDD67009802BD /* EquipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A981FC221DDD67009802BD /* EquipmentViewController.swift */; };
 		909CD7854616A37B3826A13C /* Pods_MedicalProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE2EA48F427365E859DC37E /* Pods_MedicalProject.framework */; };
 		9C19D1B8220FF49200E45E82 /* CustomerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19D1B7220FF49200E45E82 /* CustomerTableViewCell.swift */; };
 		9C19D1BE221050F200E45E82 /* CustomerInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19D1BD221050F200E45E82 /* CustomerInfoViewController.swift */; };
@@ -29,7 +28,6 @@
 
 /* Begin PBXFileReference section */
 		1EE2EA48F427365E859DC37E /* Pods_MedicalProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MedicalProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		38A981FC221DDD67009802BD /* EquipmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentViewController.swift; sourceTree = "<group>"; };
 		664DCDB76C9948568D2A3950 /* Pods-MedicalProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-MedicalProject/Pods-MedicalProject.release.xcconfig"; sourceTree = "<group>"; };
 		7F2B2E82333AC2F1A2EAEDF1 /* Pods-MedicalProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MedicalProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MedicalProject/Pods-MedicalProject.debug.xcconfig"; sourceTree = "<group>"; };
 		9C19D1B7220FF49200E45E82 /* CustomerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerTableViewCell.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 				F4443AE61DF2DFDA00800C92 /* Assets.xcassets */,
 				F4443AE81DF2DFDA00800C92 /* LaunchScreen.storyboard */,
 				F4443AE31DF2DFDA00800C92 /* Main.storyboard */,
-				38A981FC221DDD67009802BD /* EquipmentViewController.swift */,
 			);
 			path = MedicalProject;
 			sourceTree = "<group>";
@@ -268,7 +265,6 @@
 				AB9116EA2213DE5C00D6DD90 /* Customers.swift in Sources */,
 				AB45BB0D220A51440004C3CB /* MapsViewController.swift in Sources */,
 				F4443AE01DF2DFDA00800C92 /* AppDelegate.swift in Sources */,
-				38A981FD221DDD67009802BD /* EquipmentViewController.swift in Sources */,
 				9C5D09CF22166BE1008B4E0C /* CustomCell.swift in Sources */,
 				F4443AF61DF2E34F00800C92 /* HomeViewController.swift in Sources */,
 			);

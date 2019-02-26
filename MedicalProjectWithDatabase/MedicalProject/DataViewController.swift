@@ -10,18 +10,6 @@ import Firebase
 
 class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    var ThermometerPassed = ""
-    var SyringePassed = ""
-    var NebuilzerPassed = ""
-    var PulseOximeterPassed = ""
-    var BloodGlucosePassed = ""
-    var WalkerPassed = ""
-    var InfusionPassed = ""
-    var IvSolutionPassed = ""
-    var BedPassed = ""
-    
-    
-
     var customerInfo: DatabaseReference!
     
     @IBOutlet weak var CustomerName: UITextField!
@@ -53,15 +41,13 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     
     var st = ""
-    let statusOpt = ["In Progress", "Completed"]
+    let statusOpt = ["In Progress", "Completed", "Pending", "Not Started"]
     
     var ch = ""
     let choices = ["Rented", "Purchased"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         customerInfo = Database.database().reference().child("customer");
         
@@ -95,7 +81,7 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         return st
     }
     
-    private func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, forComponent component: Int) -> String? {
         if (picker.tag == 0) {
             ch = choices[row]
             return ch
@@ -141,16 +127,7 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                         "time": strTime,
                         "choice": ch,
                         "status" : st,
-                        "customerNumber": phoneNumber.text! as String,
-                        "Thermometer": ThermometerPassed,
-                        "Syringe": SyringePassed,
-                        "Nebulizer" : NebuilzerPassed,
-                        "PulseOximeter": PulseOximeterPassed,
-                        "BloodGlucoseMontior": BloodGlucosePassed,
-                        "Walker": WalkerPassed,
-                        "InfusionPump" : InfusionPassed,
-                        "IVSolution" : IvSolutionPassed,
-                        "Bed" : BedPassed]
+                        "customerNumber": phoneNumber.text! as String]
         
         customerInfo.child(key!).setValue(customer)
         
