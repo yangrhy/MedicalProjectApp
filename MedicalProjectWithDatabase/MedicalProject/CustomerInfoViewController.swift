@@ -22,6 +22,7 @@ class CustomerInfoViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomerTableViewCell
         
+        // allows new line for each string of information
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
 
@@ -30,6 +31,7 @@ class CustomerInfoViewController: UIViewController, UITableViewDelegate, UITable
         
         let customerInfoString: String?
         
+
         customerInfoString = "Customer Name: \(eachCustomer.custName!)\nCustomer Address: \(eachCustomer.custAddy!)\nCustomer Number: \(eachCustomer.custNum!)\nEquipment Type: \(eachCustomer.choice!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nDelivery Status: \(eachCustomer.delivStat!)\nBed Quantity: \(eachCustomer.bed!)\nBlood Glucose: \(eachCustomer.bloodGlucose!)\nIV Solution: \(eachCustomer.iVSolution!)\nInfusion Pump: \(eachCustomer.infusion!)\nNebulizer: \(eachCustomer.nebulizer!)\nPulse Oximeter: \(eachCustomer.pulseOx!)\nSyringe: \(eachCustomer.syringe!)\nThermometer: \(eachCustomer.thermometer!)\nWalker: \(eachCustomer.walker!)"
         
         cell.textLabel?.text = customerInfoString
@@ -60,7 +62,7 @@ class CustomerInfoViewController: UIViewController, UITableViewDelegate, UITable
                 let delivDate = custObj?["date"]
                 let delivTime = custObj?["time"]
                 let delivStatus = custObj?["status"]
-                
+   
                 let bedQuant = custObj?["Bed"]
                 let bloodQuant = custObj?["BloodGlucoseMontior"]
                 let iVQuant = custObj?["IVSolution"]

@@ -949,16 +949,39 @@
                                     <constraint firstAttribute="height" constant="342.5" id="J9h-fR-AoQ"/>
                                 </constraints>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pIa-MT-mMq">
+                                <rect key="frame" x="0.0" y="405" width="375" height="262"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="deliveryCell" id="xuD-2C-cXI" customClass="CustomerTableViewCell" customModule="MedicalProject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xuD-2C-cXI" id="E2T-oE-zpu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="n2U-VS-69b" id="Yqb-X0-MsG"/>
+                                    <outlet property="delegate" destination="n2U-VS-69b" id="0Zy-FJ-0al"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9vT-E7-izN" firstAttribute="leading" secondItem="4wY-hi-pns" secondAttribute="leading" id="1Z0-17-jRU"/>
                             <constraint firstAttribute="trailing" secondItem="9vT-E7-izN" secondAttribute="trailing" id="6yN-wz-M22"/>
+                            <constraint firstItem="pIa-MT-mMq" firstAttribute="top" secondItem="rtD-Bf-TKz" secondAttribute="bottom" constant="341" id="8P5-tA-JAi"/>
+                            <constraint firstAttribute="trailing" secondItem="pIa-MT-mMq" secondAttribute="trailing" id="N3h-8V-b3q"/>
+                            <constraint firstItem="pIa-MT-mMq" firstAttribute="leading" secondItem="4wY-hi-pns" secondAttribute="leading" id="eQd-Ys-8N9"/>
+                            <constraint firstItem="3FP-V2-xLC" firstAttribute="top" secondItem="pIa-MT-mMq" secondAttribute="bottom" id="pTW-Ts-ITH"/>
                             <constraint firstItem="9vT-E7-izN" firstAttribute="top" secondItem="rtD-Bf-TKz" secondAttribute="bottom" id="woe-Aw-fVm"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="calendarView" destination="6eL-9y-vjL" id="fQa-Ge-XNr"/>
+                        <outlet property="deliveryTableView" destination="pIa-MT-mMq" id="S0k-q5-fbT"/>
                         <outlet property="month" destination="gyA-oa-yI9" id="4hn-Md-5xs"/>
                         <outlet property="year" destination="36L-rC-H4B" id="Unm-9E-Afk"/>
                     </connections>
