@@ -27,6 +27,49 @@ class CalendarViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    func retrieveData (date: Date) {
+        let dateFormatter = DateFormatter()
+        // Now we specify the display format, e.g. "27-08-2015
+        dateFormatter.dateFormat = "dd-MM-YYYY"
+        // Now we get the date from the UIDatePicker and convert it to a string
+        
+        deliveryInfo = Database.database().reference().child("customer")
+        
+        
+        deliveryInfo?.observeSingleEvent(of: .value) { (snapshot:DataSnapshot) in
+            for customers in snapshot.children.allObjects as! [DataSnapshot] {
+                let custObj = customers.value as? [String: AnyObject]
+                if (custObj?["date"] as? String == dateFormatter.string(from: date)){
+                    let custName = custObj?["customerName"]
+                    let custAddress = custObj?["customerAddress"]
+                    let custNum = custObj?["customerNumber"]
+                    let choice = custObj?["choice"]
+                    let delivDate = custObj?["date"]
+                    let delivTime = custObj?["time"]
+                    let delivStatus = custObj?["status"]
+                    
+                    let bedQuant = custObj?["Bed"]
+                    let bloodQuant = custObj?["BloodGlucoseMontior"]
+                    let iVQuant = custObj?["IVSolution"]
+                    let infusionQunat = custObj?["InfusionPump"]
+                    let nebulizerQuant = custObj?["Nebulizer"]
+                    let pulseQuant = custObj?["PulseOximeter"]
+                    let syringeQuant = custObj?["Syringe"]
+                    let thermomQuant = custObj?["Thermometer"]
+                    let walkerQuant =  custObj?["Walker"]
+                    
+                    // Retrieving Data from Firebase IS WORKING!
+                    
+                    
+                    let customer = Customers(custName: custName as! String?, custAddy: custAddress as! String?, custNum: custNum as! String?, choice: choice as! String?, deliv: delivDate as! String?, time: delivTime as! String?, delivStat: delivStatus as! String?, bed: bedQuant as! String?, bloodGlucose: bloodQuant as! String?, iVSolution: iVQuant as! String?, infusion: infusionQunat as! String?, nebulizer: nebulizerQuant as! String?,pulseOx: pulseQuant as! String?, syringe: syringeQuant as! String?, thermometer: thermomQuant as! String?,walker: walkerQuant as! String?)
+                    
+                    self.deliveryList.append(customer)
+                }
+            }
+            self.deliveryTableView?.reloadData()
+        }
+    }
+
     func setupCalendarView() {
         // calendar spacing
         calendarView.minimumLineSpacing = 0
