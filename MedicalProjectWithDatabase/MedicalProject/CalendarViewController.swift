@@ -56,8 +56,21 @@ class CalendarViewController: UIViewController {
                     let delivTime = custObj?["time"]
                     let delivStatus = custObj?["status"]
                     
-                    let customer = Customers(custName: custName as! String?, custAddy: custAddress as! String?, custNum: custNum as! String?, choice: choice as! String?, deliv: delivDate as! String?, time: delivTime as! String?, delivStat: delivStatus as! String?)
+                    let bedQuant = custObj?["Bed"]
+                    let bloodQuant = custObj?["BloodGlucoseMontior"]
+                    let iVQuant = custObj?["IVSolution"]
+                    let infusionQunat = custObj?["InfusionPump"]
+                    let nebulizerQuant = custObj?["Nebulizer"]
+                    let pulseQuant = custObj?["PulseOximeter"]
+                    let syringeQuant = custObj?["Syringe"]
+                    let thermomQuant = custObj?["Thermometer"]
+                    let walkerQuant =  custObj?["Walker"]
                     
+                    // Retrieving Data from Firebase IS WORKING!
+                    
+                    
+                    let customer = Customers(custName: custName as! String?, custAddy: custAddress as! String?, custNum: custNum as! String?, choice: choice as! String?, deliv: delivDate as! String?, time: delivTime as! String?, delivStat: delivStatus as! String?, bed: bedQuant as! String?, bloodGlucose: bloodQuant as! String?, iVSolution: iVQuant as! String?, infusion: infusionQunat as! String?, nebulizer: nebulizerQuant as! String?,pulseOx: pulseQuant as! String?, syringe: syringeQuant as! String?, thermometer: thermomQuant as! String?,walker: walkerQuant as! String?)
+
                     self.deliveryList.append(customer)
                 }
             }
@@ -188,7 +201,7 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
         
         let customerInfoString: String?
         
-        customerInfoString = "Delivery Time: \(eachCustomer.time!)\nDelivery Date: \(eachCustomer.deliv!)\nCustomer Name: \(eachCustomer.custName!)\nCustomer Address: \(eachCustomer.custAddy!)\nCustomer Number: \(eachCustomer.custNum!)\nEquipment Type: \(eachCustomer.choice!)\nDelivery Status: \(eachCustomer.delivStat!)"
+        customerInfoString = "Customer Name: \(eachCustomer.custName!)\nCustomer Address: \(eachCustomer.custAddy!)\nCustomer Number: \(eachCustomer.custNum!)\nEquipment Type: \(eachCustomer.choice!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nDelivery Status: \(eachCustomer.delivStat!)\nBed Quantity: \(eachCustomer.bed!)\nBlood Glucose: \(eachCustomer.bloodGlucose!)\nIV Solution: \(eachCustomer.iVSolution!)\nInfusion Pump: \(eachCustomer.infusion!)\nNebulizer: \(eachCustomer.nebulizer!)\nPulse Oximeter: \(eachCustomer.pulseOx!)\nSyringe: \(eachCustomer.syringe!)\nThermometer: \(eachCustomer.thermometer!)\nWalker: \(eachCustomer.walker!)"
         
         cell.textLabel?.text = customerInfoString
         
