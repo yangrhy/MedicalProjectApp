@@ -145,11 +145,11 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                         "Thermometer": ThermometerPassed,
                         "Syringe": SyringePassed,
                         "Nebulizer" : NebuilzerPassed,
-                        "Pulse Oximeter": PulseOximeterPassed,
-                        "Blood Glucose Monior": BloodGlucosePassed,
+                        "PulseOximeter": PulseOximeterPassed,
+                        "BloodGlucoseMontior": BloodGlucosePassed,
                         "Walker": WalkerPassed,
-                        "Infusiton Pump" : InfusionPassed,
-                        "IV Solution" : IvSolutionPassed,
+                        "InfusionPump" : InfusionPassed,
+                        "IVSolution" : IvSolutionPassed,
                         "Bed" : BedPassed]
         
         customerInfo.child(key!).setValue(customer)
