@@ -51,13 +51,9 @@ class DataViewController: UIViewController{
     
     @IBOutlet weak var Date: UIDatePicker!
     
-    
     @IBOutlet weak var Time: UIDatePicker!
     
-    
-    
     @IBOutlet weak var phoneNumber: UITextField!
-   
     
     @IBOutlet weak var purchaseSw: UISwitch!
     
@@ -68,6 +64,9 @@ class DataViewController: UIViewController{
     @IBAction func purchasedSwitch(_ sender: UIButton) {
         if (purchaseSw.isOn == true){
             type = "Purchased"
+            rentSw.isOn = false
+            returnDate.isHidden = true
+            returnLabel.isHidden = true
         }
         
     }
@@ -78,6 +77,7 @@ class DataViewController: UIViewController{
             returnDate.isHidden = false
             returnLabel.isHidden = false
             type = "Rented"
+            purchaseSw.isOn = false
         }
         else{
             returnDate.isHidden = true
