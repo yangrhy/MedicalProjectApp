@@ -9,12 +9,13 @@ import CoreLocation
 import FirebaseDatabase
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate {
     
   
     @IBOutlet weak var mapView: MKMapView!
     
     var customerInfo: DatabaseReference!
+    
     
     
     let regionRadius: CLLocationDistance = 5000
@@ -31,7 +32,7 @@ class MapViewController: UIViewController {
         let initialLocation = CLLocation(latitude: 36.125499498, longitude: -95.935662924)
         
         centerMapOnLocation(location: initialLocation)
-        
+        mapView.delegate = self
             
 }
     
@@ -53,5 +54,15 @@ class MapViewController: UIViewController {
 
             self.mapView.addAnnotation(annotation)
             
+
         })}
+    
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: (view.annotation?.coordinate)!, addressDictionary:nil))
+        mapItem.name = (view.annotation?.title)!
+        mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+        
+        }
+    
 }
