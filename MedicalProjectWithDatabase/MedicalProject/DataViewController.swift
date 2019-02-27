@@ -2,13 +2,14 @@
 //  DataViewController.swift
 //  MedicalProject
 //
-//  Created by Ashley on 2/5/19.
 //
+
 
 import UIKit
 import Firebase
+import CoreLocation
 
-class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class DataViewController: UIViewController{
     
     var ThermometerPassed = ""
     var SyringePassed = ""
@@ -20,18 +21,31 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var IvSolutionPassed = ""
     var BedPassed = ""
     
-    
-
+    var type = ""
+    var lat = ""
+    var long = ""
     var customerInfo: DatabaseReference!
     
     @IBOutlet weak var CustomerName: UITextField!
     
-    @IBOutlet weak var CustomerAddress: UITextField!
     
+    @IBOutlet weak var countryTextField: UITextField!
     
+    @IBOutlet weak var cityTextField: UITextField!
+    
+    @IBOutlet weak var streetTextField: UITextField!
     
     @IBAction func submitInfo(_ sender: Any) {
-        updateInfo()
+        guard let country = countryTextField.text else { return }
+        guard let street = streetTextField.text else { return }
+        guard let city = cityTextField.text else { return }
+        
+        let address = "\(country), \(city), \(street)"
+        
+        geocoder.geocodeAddressString(address) { (placemarks, error) in
+            // Process Response
+            self.processResponse(withPlacemarks: placemarks, error: error)
+        }
     }
     
     
@@ -42,18 +56,47 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     
     
-    @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var phoneNumber: UITextField!
+   
     
+    @IBOutlet weak var purchaseSw: UISwitch!
+    
+    @IBOutlet weak var rentSw: UISwitch!
+    
+    @IBOutlet weak var returnLabel: UILabel!
+    
+    @IBAction func purchasedSwitch(_ sender: UIButton) {
+        if (purchaseSw.isOn == true){
+            type = "Purchased"
+        }
+        
+    }
+    
+    
+    @IBAction func rentedSwitch(_ sender: UIButton) {
+        if (rentSw.isOn == true){
+            returnDate.isHidden = false
+            returnLabel.isHidden = false
+            type = "Rented"
+        }
+        else{
+            returnDate.isHidden = true
+            returnLabel.isHidden = true
+        }
+    }
+   
+    
+    @IBOutlet weak var returnDate: UIDatePicker!
+    
+    lazy var geocoder = CLGeocoder()
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+    }
     
 
-    @IBOutlet weak var status: UIPickerView!
-    
-    
-    @IBOutlet weak var phoneNumber: UITextField!
-    
-    
-    var st = ""
-    let statusOpt = ["In Progress", "Completed"]
     
     var ch = ""
     let choices = ["Rented", "Purchased"]
@@ -61,69 +104,59 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        purchaseSw.isOn = false
+        rentSw.isOn = false
         
         customerInfo = Database.database().reference().child("customer");
         
-        self.picker.delegate = self
-        self.picker.dataSource = self
-        
-        
-        self.status.delegate = self
-        self.status.dataSource = self
-        
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
+
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == picker{
-            return choices.count
+    
+    
+    func processResponse(withPlacemarks placemarks: [CLPlacemark]?, error: Error?) {
+        // Update View
+
+        
+        
+        if let error = error {
+            print("Unable to Forward Geocode Address (\(error))")
+
+            
+        } else {
+            var location: CLLocation?
+            
+            if let placemarks = placemarks, placemarks.count > 0 {
+                location = placemarks.first?.location
+            }
+            
+            if let location = location {
+                let coordinate = location.coordinate
+
+                lat = "\(coordinate.latitude)"
+                long = "\(coordinate.longitude)"
+                
+            } else {
+                lat = "No Matching Location Found"
+                long = "No Matching Location Found"
+                
+
+            }
         }
-        return statusOpt.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == picker {
-            ch = choices[row]
-            return ch
-        }
         
-        st = statusOpt[row]
-        return st
-    }
-    
-    private func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, forComponent component: Int) -> String? {
-        if (picker.tag == 0) {
-            ch = choices[row]
-            return ch
-        }
-        
-        st = statusOpt[row]
-        return st
-        
-        
-    }
-    
-    
-    func updateInfo(){
-        
-        // First we need to create a new instance of the NSDateFormatter
         let dateFormatter = DateFormatter()
-        // Now we specify the display format, e.g. "27-08-2015
         dateFormatter.dateFormat = "dd-MM-YYYY"
-        // Now we get the date from the UIDatePicker and convert it to a string
         let strDate = dateFormatter.string(from: Date.date)
         
+    
+        let returnDateFormatter = DateFormatter()
+        returnDateFormatter.dateFormat = "dd-MM-YYYY"
+        let retDate = returnDateFormatter.string(from: returnDate.date)
         
-        
-        // First we need to create a new instance of the NSDateFormatter
+    
         let timeFormatter = DateFormatter()
-        // Now we specify the display format, e.g. "27-08-2015
         timeFormatter.dateFormat = "HH:mm a"
-        // Now we get the time from the UIDatePicker and convert it to a string
         let strTime = timeFormatter.string(from: Time.date)
         
         timeFormatter.amSymbol = "AM"
@@ -134,13 +167,19 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         let key = customerInfo.childByAutoId().key
         
+        
+        if (rentSw.isOn == true){
         let customer = ["id":key,
                         "customerName": CustomerName.text! as String,
-                        "customerAddress": CustomerAddress.text! as String,
+                        "country" : countryTextField.text! as String,
+                        "city" : cityTextField.text! as String,
+                        "street" : streetTextField.text! as String,
+                        "latitude": lat,
+                        "longitude": long,
                         "date": strDate,
                         "time": strTime,
-                        "choice": ch,
-                        "status" : st,
+                        "type" : type,
+                        "returnDate" : retDate,
                         "customerNumber": phoneNumber.text! as String,
                         "Thermometer": ThermometerPassed,
                         "Syringe": SyringePassed,
@@ -151,22 +190,46 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                         "InfusionPump" : InfusionPassed,
                         "IVSolution" : IvSolutionPassed,
                         "Bed" : BedPassed]
+            
+            customerInfo.child(key!).setValue(customer)
+        }
+        else {
+            let customer = ["id":key,
+                            "customerName": CustomerName.text! as String,
+                            "country" : countryTextField.text! as String,
+                            "city" : cityTextField.text! as String,
+                            "street" : streetTextField.text! as String,
+                            "latitude": lat,
+                            "longitude": long,
+                            "date": strDate,
+                            "time": strTime,
+                            "type" : type,
+                            "customerNumber": phoneNumber.text! as String,
+                            "Thermometer": ThermometerPassed,
+                            "Syringe": SyringePassed,
+                            "Nebulizer" : NebuilzerPassed,
+                            "PulseOximeter": PulseOximeterPassed,
+                            "BloodGlucoseMontior": BloodGlucosePassed,
+                            "Walker": WalkerPassed,
+                            "InfusionPump" : InfusionPassed,
+                            "IVSolution" : IvSolutionPassed,
+                            "Bed" : BedPassed]
+            
+            customerInfo.child(key!).setValue(customer)
+        }
         
-        customerInfo.child(key!).setValue(customer)
-        
-        // reset fields -RY and give popup message that info has been updated
-        
-        // create the alert
+
         let alert = UIAlertController(title: "Equipment Form", message: "Information has been updated.", preferredStyle: UIAlertController.Style.alert)
         
-        // add an action (button)
+
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         
-        // show the alert
+        
         self.present(alert, animated: true, completion: nil)
-        // clear fields for another entry
         CustomerName.text = ""
-        CustomerAddress.text = ""
+        countryTextField.text = ""
+        cityTextField.text = ""
+        streetTextField.text = ""
         phoneNumber.text = ""
         
     }
