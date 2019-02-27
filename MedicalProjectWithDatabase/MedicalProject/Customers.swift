@@ -16,7 +16,6 @@ class Customers{
     var deliv: String?
     var time: String?
     var delivStat: String?
-    
     var bed: String?
     var bloodGlucose: String?
     var iVSolution: String?
@@ -37,7 +36,6 @@ class Customers{
         self.deliv = deliv;
         self.time = time;
         self.delivStat = delivStat;
-        
         self.bed = bed
         self.bloodGlucose = bloodGlucose
         self.iVSolution = iVSolution
