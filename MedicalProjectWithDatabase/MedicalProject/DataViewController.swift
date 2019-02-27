@@ -10,7 +10,8 @@ import Firebase
 import CoreLocation
 
 class DataViewController: UIViewController{
-    
+    var equipmentInfo: [String: Int] = [:]
+
     var ThermometerPassed = ""
     var SyringePassed = ""
     var NebuilzerPassed = ""
@@ -181,6 +182,9 @@ class DataViewController: UIViewController{
                         "type" : type,
                         "returnDate" : retDate,
                         "customerNumber": phoneNumber.text! as String,
+                        "eqipment" : equipmentInfo] as [String : Any]
+
+                        /*
                         "Thermometer": ThermometerPassed,
                         "Syringe": SyringePassed,
                         "Nebulizer" : NebuilzerPassed,
@@ -190,7 +194,7 @@ class DataViewController: UIViewController{
                         "InfusionPump" : InfusionPassed,
                         "IVSolution" : IvSolutionPassed,
                         "Bed" : BedPassed]
-            
+                        */
             customerInfo.child(key!).setValue(customer)
         }
         else {
@@ -205,6 +209,8 @@ class DataViewController: UIViewController{
                             "time": strTime,
                             "type" : type,
                             "customerNumber": phoneNumber.text! as String,
+                            "eqipment" : equipmentInfo] as [String : Any]
+                            /*
                             "Thermometer": ThermometerPassed,
                             "Syringe": SyringePassed,
                             "Nebulizer" : NebuilzerPassed,
@@ -214,6 +220,7 @@ class DataViewController: UIViewController{
                             "InfusionPump" : InfusionPassed,
                             "IVSolution" : IvSolutionPassed,
                             "Bed" : BedPassed]
+                            */
             
             customerInfo.child(key!).setValue(customer)
         }

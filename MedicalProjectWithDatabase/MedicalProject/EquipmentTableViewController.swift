@@ -7,7 +7,7 @@
 import UIKit
 
 class EquipmentTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,7 +49,8 @@ class EquipmentTableViewController: UITableViewController {
 
 
     }
-
+    var equipmentInfo: [String: Int] = [:]
+    
     @IBOutlet weak var ThermometerStepper: UIStepper!
     
     @IBOutlet weak var SyringeStepper: UIStepper!
@@ -126,6 +127,54 @@ class EquipmentTableViewController: UITableViewController {
     
     @IBAction func SubmitButton(_ sender: Any) {
         let myVC = storyboard?.instantiateViewController(withIdentifier: "SecondVC") as! DataViewController
+        
+        if let text = self.ThermometerLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["Thermometer"] = value
+            }
+        }
+        if let text = self.SyringeLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["Syringe"] = value
+            }
+        }
+        if let text = self.NebulizerLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["Nebulizer"] = value
+            }
+        }
+        if let text = self.PulseOximeterLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["Pulse Oximeter"] = value
+            }
+        }
+        if let text = self.BloodGlucoseLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["Blood Glucose Monitor"] = value
+            }
+        }
+        if let text = self.WalkerLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["Walker"] = value
+            }
+        }
+        if let text = self.InfusionLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["Infusion Pump"] = value
+            }
+        }
+        if let text = self.IvSolutionLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["IV Solution"] = value
+            }
+        }
+        if let text = self.BedLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["Bed"] = value
+            }
+        }
+        myVC.equipmentInfo = self.equipmentInfo
+        /*
         myVC.ThermometerPassed = ThermometerLabel.text!
         myVC.SyringePassed = SyringeLabel.text!
         myVC.NebuilzerPassed = NebulizerLabel.text!
@@ -135,6 +184,7 @@ class EquipmentTableViewController: UITableViewController {
         myVC.InfusionPassed = InfusionLabel.text!
         myVC.IvSolutionPassed = IvSolutionLabel.text!
         myVC.BedPassed = BedLabel.text!
+ */
         navigationController?.pushViewController(myVC, animated: true)
     }
     
