@@ -1,8 +1,7 @@
 //
-//  TableViewController.swift
+//  EquipmentViewController.swift
 //  MedicalProject
 //
-//  Created by Alfredo on 2/26/19.
 //
 
 import UIKit
