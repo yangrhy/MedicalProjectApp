@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class DataViewController: UIViewController{
     
     var ThermometerPassed = ""
     var SyringePassed = ""
@@ -20,7 +20,7 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     var IvSolutionPassed = ""
     var BedPassed = ""
     
-    
+    var type = ""
 
     var customerInfo: DatabaseReference!
     
@@ -42,18 +42,38 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     
     
-    @IBOutlet weak var picker: UIPickerView!
-    
-    
-
-    @IBOutlet weak var status: UIPickerView!
-    
-    
     @IBOutlet weak var phoneNumber: UITextField!
+   
+    
+    @IBOutlet weak var purchaseSw: UISwitch!
+    
+    @IBOutlet weak var rentSw: UISwitch!
+    
+    @IBOutlet weak var returnLabel: UILabel!
+    
+    @IBAction func purchasedSwitch(_ sender: UIButton) {
+        if (purchaseSw.isOn == true){
+            type = "Purchased"
+        }
+        
+    }
     
     
-    var st = ""
-    let statusOpt = ["In Progress", "Completed"]
+    @IBAction func rentedSwitch(_ sender: UIButton) {
+        if (rentSw.isOn == true){
+            returnDate.isHidden = false
+            returnLabel.isHidden = false
+            type = "Rented"
+        }
+        else{
+            returnDate.isHidden = true
+            returnLabel.isHidden = true
+        }
+    }
+   
+    
+    @IBOutlet weak var returnDate: UIDatePicker!
+    
     
     var ch = ""
     let choices = ["Rented", "Purchased"]
@@ -61,51 +81,20 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        purchaseSw.isOn = false
+        rentSw.isOn = false
         
         customerInfo = Database.database().reference().child("customer");
         
-        self.picker.delegate = self
-        self.picker.dataSource = self
+        //self.picker.delegate = self
+        //self.picker.dataSource = self
         
-        
-        self.status.delegate = self
-        self.status.dataSource = self
+ 
         
     }
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
+
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if pickerView == picker{
-            return choices.count
-        }
-        return statusOpt.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if pickerView == picker {
-            ch = choices[row]
-            return ch
-        }
-        
-        st = statusOpt[row]
-        return st
-    }
-    
-    private func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, forComponent component: Int) -> String? {
-        if (picker.tag == 0) {
-            ch = choices[row]
-            return ch
-        }
-        
-        st = statusOpt[row]
-        return st
-        
-        
-    }
     
     
     func updateInfo(){
@@ -117,6 +106,13 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         // Now we get the date from the UIDatePicker and convert it to a string
         let strDate = dateFormatter.string(from: Date.date)
         
+        
+        // First we need to create a new instance of the NSDateFormatter
+        let returnDateFormatter = DateFormatter()
+        // Now we specify the display format, e.g. "27-08-2015
+        returnDateFormatter.dateFormat = "dd-MM-YYYY"
+        // Now we get the date from the UIDatePicker and convert it to a string
+        let retDate = returnDateFormatter.string(from: returnDate.date)
         
         
         // First we need to create a new instance of the NSDateFormatter
@@ -134,13 +130,15 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         
         let key = customerInfo.childByAutoId().key
         
+        
+        if (rentSw.isOn == true){
         let customer = ["id":key,
                         "customerName": CustomerName.text! as String,
                         "customerAddress": CustomerAddress.text! as String,
                         "date": strDate,
                         "time": strTime,
-                        "choice": ch,
-                        "status" : st,
+                        "type" : type,
+                        "returnDate" : retDate,
                         "customerNumber": phoneNumber.text! as String,
                         "Thermometer": ThermometerPassed,
                         "Syringe": SyringePassed,
@@ -151,8 +149,30 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
                         "InfusionPump" : InfusionPassed,
                         "IVSolution" : IvSolutionPassed,
                         "Bed" : BedPassed]
+            
+            customerInfo.child(key!).setValue(customer)
+        }
+        else {
+            let customer = ["id":key,
+                            "customerName": CustomerName.text! as String,
+                            "customerAddress": CustomerAddress.text! as String,
+                            "date": strDate,
+                            "time": strTime,
+                            "type" : type,
+                            "customerNumber": phoneNumber.text! as String,
+                            "Thermometer": ThermometerPassed,
+                            "Syringe": SyringePassed,
+                            "Nebulizer" : NebuilzerPassed,
+                            "PulseOximeter": PulseOximeterPassed,
+                            "BloodGlucoseMontior": BloodGlucosePassed,
+                            "Walker": WalkerPassed,
+                            "InfusionPump" : InfusionPassed,
+                            "IVSolution" : IvSolutionPassed,
+                            "Bed" : BedPassed]
+            
+            customerInfo.child(key!).setValue(customer)
+        }
         
-        customerInfo.child(key!).setValue(customer)
         
         // reset fields -RY and give popup message that info has been updated
         
