@@ -20,16 +20,14 @@ class Customers{
     var equipment: [String: Any] = [:]
     var location: [String: Any] = [:]
     
-    init(custName:String?, custNum:String?, deliv:String?, time:String?,type: String?,country: String?, city: String?, street: String?, equipment: [String: Any]){
+    init(custName:String?, custNum:String?, deliv:String?, time:String?,type: String?, location: [String: Any], equipment: [String: Any]){
         
         self.custName = custName
         self.custNum = custNum
         self.deliv = deliv
         self.time = time
         self.type = type
-        self.country = country
-        self.city = city
-        self.street = street
+        self.location = location
         self.equipment = equipment
     }
 }

@@ -112,9 +112,9 @@ class DataViewController: UIViewController{
                 
             }
         }
-        
-        locationInfo["Country"] = countryTextField.text
+        locationInfo["Street"] = streetTextField.text
         locationInfo["City"] = cityTextField.text
+        locationInfo["Country"] = countryTextField.text
         locationInfo["Street"] = streetTextField.text
         locationInfo["Latitude"] = lat
         locationInfo["Longitude"] = long
@@ -140,12 +140,6 @@ class DataViewController: UIViewController{
         if (rentSw.isOn == true){
         let customer = ["id":key,
                         "customerName": CustomerName.text! as String,
-                        /*
-                        "country" : countryTextField.text! as String,
-                        "city" : cityTextField.text! as String,
-                        "street" : streetTextField.text! as String,
-                        "latitude": lat,
-                        "longitude": long, */
                         "location": locationInfo as [String:Any],
                         "date": strDate,
                         "time": strTime,
@@ -159,18 +153,12 @@ class DataViewController: UIViewController{
         else {
             let customer = ["id":key,
                             "customerName": CustomerName.text! as String,
-                            /*
-                            "country" : countryTextField.text! as String,
-                            "city" : cityTextField.text! as String,
-                            "street" : streetTextField.text! as String,
-                            "latitude": lat,
-                            "longitude": long, */
                             "location": locationInfo as [String:Any],
                             "date": strDate,
                             "time": strTime,
                             "type" : type,
                             "customerNumber": phoneNumber.text! as String,
-                            "eqipment" : equipmentInfo] as [String : Any]
+                            "equipment" : equipmentInfo] as [String : Any]
             
             customerInfo.child(key!).setValue(customer)
         }
