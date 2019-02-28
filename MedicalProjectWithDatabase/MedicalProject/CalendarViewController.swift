@@ -56,6 +56,10 @@ class CalendarViewController: UIViewController {
                     let delivTime = custObj?["time"]
                     let purchType = custObj?["type"]
                     
+                    let equipment = custObj?["eqipment"]
+                    
+                    let customer = Customers(custName: custName as! String?, custNum: custNum as! String?, deliv: delivDate as! String?, time: delivTime as! String?, type: purchType as! String?, country: custCountry as! String?, city: custCity as! String?, street: custStreet as! String?, equipment: equipment as! [String: Any])
+                    /*
                     let bedQuant = custObj?["Bed"]
                     let bloodQuant = custObj?["BloodGlucoseMontior"]
                     let iVQuant = custObj?["IVSolution"]
@@ -75,7 +79,7 @@ class CalendarViewController: UIViewController {
                                              syringe: syringeQuant as! String?,
                                              thermometer: thermomQuant as! String?,
                                              walker: walkerQuant as! String?)
-                    
+                    */
                     self.deliveryList.append(customer)
                 }
             }
@@ -206,8 +210,10 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
         
         let customerInfoString: String?
         
+        customerInfoString = "Customer Name: \(eachCustomer.custName!)\nCountry: \(eachCustomer.country!)\nCity: \(eachCustomer.city!)\nStreet: \(eachCustomer.street!)\nCustomer Number: \(eachCustomer.custNum!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nPurchase Type: \(eachCustomer.type!)\nEquipment: \(eachCustomer.equipment)"
+        /*
         customerInfoString = "Customer Name: \(eachCustomer.custName!)\nCountry: \(eachCustomer.country!)\nCity: \(eachCustomer.city!)\nStreet: \(eachCustomer.street!)\nCustomer Number: \(eachCustomer.custNum!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nPurchase Type: \(eachCustomer.type!)\nBed Quantity: \(eachCustomer.bed!)\nBlood Glucose: \(eachCustomer.bloodGlucose!)\nIV Solution: \(eachCustomer.iVSolution!)\nInfusion Pump: \(eachCustomer.infusion!)\nNebulizer: \(eachCustomer.nebulizer!)\nPulse Oximeter: \(eachCustomer.pulseOx!)\nSyringe: \(eachCustomer.syringe!)\nThermometer: \(eachCustomer.thermometer!)\nWalker: \(eachCustomer.walker!)"
-        
+        */
         cell.textLabel?.text = customerInfoString
         
         return cell

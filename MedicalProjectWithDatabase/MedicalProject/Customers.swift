@@ -17,7 +17,21 @@ class Customers{
     var country: String?
     var city: String?
     var street: String?
+    var equipment: [String: Any] = [:]
     
+    init(custName:String?, custNum:String?, deliv:String?, time:String?,type: String?,country: String?, city: String?, street: String?, equipment: [String: Any]){
+        
+        self.custName = custName
+        self.custNum = custNum
+        self.deliv = deliv
+        self.time = time
+        self.type = type
+        self.country = country
+        self.city = city
+        self.street = street
+        self.equipment = equipment
+    }
+    /*
     var bed: String?
     var bloodGlucose: String?
     var iVSolution: String?
@@ -49,5 +63,5 @@ class Customers{
         self.syringe = syringe
         self.thermometer = thermometer
         self.walker = walker
-    }
+    } */
 }

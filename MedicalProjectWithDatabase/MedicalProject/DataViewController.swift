@@ -10,7 +10,7 @@ import Firebase
 import CoreLocation
 
 class DataViewController: UIViewController{
-    var equipmentInfo: [String: Int] = [:]
+    var equipmentInfo: [String: Any] = [:]
 
     var ThermometerPassed = ""
     var SyringePassed = ""

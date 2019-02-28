@@ -49,7 +49,7 @@ class EquipmentTableViewController: UITableViewController {
 
 
     }
-    var equipmentInfo: [String: Int] = [:]
+    var equipmentInfo: [String: Any] = [:]
     
     @IBOutlet weak var ThermometerStepper: UIStepper!
     

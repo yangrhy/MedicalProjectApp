@@ -663,7 +663,7 @@
                         <viewControllerLayoutGuide type="bottom" id="mDY-r8-Edj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ooE-WZ-1GB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="748"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNT-xh-uWb">
@@ -871,7 +871,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="wqd-Ea-eyH" secondAttribute="trailing" constant="125" id="zju-ku-s4s"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="375" height="750"/>
+                    <size key="freeformSize" width="375" height="748"/>
                     <connections>
                         <outlet property="CustomerName" destination="A7o-JJ-Un9" id="C4A-y2-z3z"/>
                         <outlet property="Date" destination="yjk-Y4-hjh" id="DIM-yd-NHx"/>
