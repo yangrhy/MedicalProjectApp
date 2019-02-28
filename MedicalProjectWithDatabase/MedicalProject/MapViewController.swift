@@ -11,13 +11,10 @@ import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     
-  
     @IBOutlet weak var mapView: MKMapView!
     
     var customerInfo: DatabaseReference!
-    
-    
-    
+
     let regionRadius: CLLocationDistance = 5000
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
@@ -46,7 +43,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let title = (snapshot.value as AnyObject)["customerName"] as! String!
             let latitude = (snapshot.value as AnyObject)["latitude"] as! String!
             let longitude = (snapshot.value as AnyObject)["longitude"] as! String!
-
             
             let annotation = MKPointAnnotation()
             annotation.title = title
@@ -54,7 +50,6 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
             self.mapView.addAnnotation(annotation)
             
-
         })}
     
     

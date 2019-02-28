@@ -13,7 +13,6 @@ class SignUpViewController: UIViewController {
     //Outlets
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
 
     @IBAction func createAccountAction(_ sender: AnyObject) {
         if emailTextField.text == "" {

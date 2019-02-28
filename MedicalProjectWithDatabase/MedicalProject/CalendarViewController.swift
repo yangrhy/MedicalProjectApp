@@ -142,7 +142,6 @@ class CalendarViewController: UIViewController {
             }
         }
     }
-    
 }
 
 extension CalendarViewController: JTAppleCalendarViewDataSource {
@@ -209,11 +208,14 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
         eachCustomer = deliveryList[indexPath.row]
         
         let customerInfoString: String?
+        var equipmentString = ""
         
-        customerInfoString = "Customer Name: \(eachCustomer.custName!)\nCountry: \(eachCustomer.country!)\nCity: \(eachCustomer.city!)\nStreet: \(eachCustomer.street!)\nCustomer Number: \(eachCustomer.custNum!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nPurchase Type: \(eachCustomer.type!)\nEquipment: \(eachCustomer.equipment)"
-        /*
-        customerInfoString = "Customer Name: \(eachCustomer.custName!)\nCountry: \(eachCustomer.country!)\nCity: \(eachCustomer.city!)\nStreet: \(eachCustomer.street!)\nCustomer Number: \(eachCustomer.custNum!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nPurchase Type: \(eachCustomer.type!)\nBed Quantity: \(eachCustomer.bed!)\nBlood Glucose: \(eachCustomer.bloodGlucose!)\nIV Solution: \(eachCustomer.iVSolution!)\nInfusion Pump: \(eachCustomer.infusion!)\nNebulizer: \(eachCustomer.nebulizer!)\nPulse Oximeter: \(eachCustomer.pulseOx!)\nSyringe: \(eachCustomer.syringe!)\nThermometer: \(eachCustomer.thermometer!)\nWalker: \(eachCustomer.walker!)"
-        */
+        for (key, value) in eachCustomer.equipment {
+            equipmentString += ("\n\(key): \(value)")
+        }
+        
+        customerInfoString = "Customer Name: \(eachCustomer.custName!)\nCountry: \(eachCustomer.country!)\nCity: \(eachCustomer.city!)\nStreet: \(eachCustomer.street!)\nCustomer Number: \(eachCustomer.custNum!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nPurchase Type: \(eachCustomer.type!)\nEquipment Info:\(equipmentString)"
+        
         cell.textLabel?.text = customerInfoString
         
         return cell

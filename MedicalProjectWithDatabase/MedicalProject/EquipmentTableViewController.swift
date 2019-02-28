@@ -52,21 +52,13 @@ class EquipmentTableViewController: UITableViewController {
     var equipmentInfo: [String: Any] = [:]
     
     @IBOutlet weak var ThermometerStepper: UIStepper!
-    
     @IBOutlet weak var SyringeStepper: UIStepper!
-    
     @IBOutlet weak var NebulizerStepper: UIStepper!
-    
     @IBOutlet weak var PulseOxStepper: UIStepper!
-    
     @IBOutlet weak var BloodGlucoseStepper: UIStepper!
-    
     @IBOutlet weak var WalkerStepper: UIStepper!
-    
     @IBOutlet weak var InfusionStepper: UIStepper!
-    
     @IBOutlet weak var IvSolutionStepper: UIStepper!
-    
     @IBOutlet weak var BedStepper: UIStepper!
     
     @IBAction func ThermometerStepChange(_ sender: UIStepper) {
@@ -106,22 +98,13 @@ class EquipmentTableViewController: UITableViewController {
     }
     
     @IBOutlet weak var ThermometerLabel: UILabel!
-    
     @IBOutlet weak var SyringeLabel: UILabel!
-    
     @IBOutlet weak var NebulizerLabel: UILabel!
-    
     @IBOutlet weak var PulseOximeterLabel: UILabel!
-    
     @IBOutlet weak var BloodGlucoseLabel: UILabel!
-    
     @IBOutlet weak var WalkerLabel: UILabel!
-    
     @IBOutlet weak var InfusionLabel: UILabel!
-    
     @IBOutlet weak var IvSolutionLabel: UILabel!
-    
-    
     @IBOutlet weak var BedLabel: UILabel!
     
     
@@ -174,17 +157,7 @@ class EquipmentTableViewController: UITableViewController {
             }
         }
         myVC.equipmentInfo = self.equipmentInfo
-        /*
-        myVC.ThermometerPassed = ThermometerLabel.text!
-        myVC.SyringePassed = SyringeLabel.text!
-        myVC.NebuilzerPassed = NebulizerLabel.text!
-        myVC.PulseOximeterPassed = PulseOximeterLabel.text!
-        myVC.BloodGlucosePassed = BloodGlucoseLabel.text!
-        myVC.WalkerPassed = WalkerLabel.text!
-        myVC.InfusionPassed = InfusionLabel.text!
-        myVC.IvSolutionPassed = IvSolutionLabel.text!
-        myVC.BedPassed = BedLabel.text!
- */
+
         navigationController?.pushViewController(myVC, animated: true)
     }
     

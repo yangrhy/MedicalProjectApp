@@ -10,9 +10,7 @@ import FirebaseAuth
 
 class ResetPasswordViewController: UIViewController {
     
-
     @IBOutlet weak var emailTextField: UITextField!
-
 
     @IBAction func submitAction(_ sender: AnyObject)
     {
