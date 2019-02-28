@@ -200,7 +200,7 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
             }
         }
         
-        customerInfoString = "Customer Name: \(eachCustomer.custName!)\nAddress: \(locationString)\nCustomer Number: \(eachCustomer.custNum!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nPurchase Type: \(eachCustomer.type!)\nEquipment Info:\(equipmentString)"
+        customerInfoString = "Customer Name: \(eachCustomer.custName!)\n\(locationString)\nCustomer Number: \(eachCustomer.custNum!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nPurchase Type: \(eachCustomer.type!)\nEquipment Info:\(equipmentString)"
         
         cell.textLabel?.text = customerInfoString
         

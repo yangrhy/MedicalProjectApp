@@ -44,11 +44,8 @@ class CustomerInfoViewController: UIViewController, UITableViewDelegate, UITable
             }
         }
         
-        customerInfoString = "Customer Name: \(eachCustomer.custName!)\nAddress: \(locationString)\nCustomer Number: \(eachCustomer.custNum!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nPurchase Type: \(eachCustomer.type!)\nEquipment Info:\(equipmentString)"
-        
-        /*
-        customerInfoString = "Customer Name: \(eachCustomer.custName!)\nCountry: \(eachCustomer.country!)\nCity: \(eachCustomer.city!)\nStreet: \(eachCustomer.street!)\nCustomer Number: \(eachCustomer.custNum!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nPurchase Type: \(eachCustomer.type!)\nEquipment Info:\(equipmentString)"
-*/
+        customerInfoString = "Customer Name: \(eachCustomer.custName!)\n\(locationString)\nCustomer Number: \(eachCustomer.custNum!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nPurchase Type: \(eachCustomer.type!)\nEquipment Info:\(equipmentString)"
+
         cell.textLabel?.text = customerInfoString
         
         return cell
