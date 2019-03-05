@@ -663,7 +663,7 @@
                         <viewControllerLayoutGuide type="bottom" id="mDY-r8-Edj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ooE-WZ-1GB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="748"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchased" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNT-xh-uWb">
@@ -742,16 +742,6 @@
                                     <!--2019-02-27 00:30:06 +0000-->
                                 </date>
                             </datePicker>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Customer Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jsN-Qa-rvm">
-                                <rect key="frame" x="70" y="212" width="235" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="YEL-wS-C7e"/>
-                                    <constraint firstAttribute="width" constant="235" id="aHH-wT-fPE"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Customer City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKx-5o-RMR">
                                 <rect key="frame" x="67" y="250" width="238" height="30"/>
                                 <constraints>
@@ -762,8 +752,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Customer Street" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIX-Gz-hLv">
-                                <rect key="frame" x="67" y="288" width="230" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Customer Street" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIX-Gz-hLv">
+                                <rect key="frame" x="67" y="288" width="240" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="jZk-JS-XrY"/>
                                     <constraint firstAttribute="width" constant="230" id="vkB-vq-VOy"/>
@@ -812,6 +802,16 @@
                                     <segue destination="pmo-W9-tlb" kind="show" id="t7n-B1-lan"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Customer Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jsN-Qa-rvm">
+                                <rect key="frame" x="67" y="212" width="238" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="YEL-wS-C7e"/>
+                                    <constraint firstAttribute="width" constant="235" id="aHH-wT-fPE"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -871,7 +871,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="wqd-Ea-eyH" secondAttribute="trailing" constant="125" id="zju-ku-s4s"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="375" height="750"/>
+                    <size key="freeformSize" width="375" height="748"/>
                     <connections>
                         <outlet property="CustomerName" destination="A7o-JJ-Un9" id="C4A-y2-z3z"/>
                         <outlet property="Date" destination="yjk-Y4-hjh" id="DIM-yd-NHx"/>

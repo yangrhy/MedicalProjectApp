@@ -111,15 +111,15 @@
 				AB9116E92213DE5B00D6DD90 /* Customers.swift */,
 				9C19D1B7220FF49200E45E82 /* CustomerTableViewCell.swift */,
 				ABAC81AB220AA1BF006D9DE3 /* DataViewController.swift */,
+				3833E0C022262909006305D2 /* EquipmentTableViewController.swift */,
 				F4443AF21DF2E34F00800C92 /* HomeViewController.swift */,
 				F4443AF31DF2E34F00800C92 /* LoginViewController.swift */,
+				389C55F422264C49008E3B8C /* MapViewController.swift */,
 				F4443AF41DF2E34F00800C92 /* ResetPasswordViewController.swift */,
 				F4443AF11DF2E34F00800C92 /* SignUpViewController.swift */,
 				F4443AE61DF2DFDA00800C92 /* Assets.xcassets */,
 				F4443AE81DF2DFDA00800C92 /* LaunchScreen.storyboard */,
 				F4443AE31DF2DFDA00800C92 /* Main.storyboard */,
-				3833E0C022262909006305D2 /* EquipmentTableViewController.swift */,
-				389C55F422264C49008E3B8C /* MapViewController.swift */,
 			);
 			path = MedicalProject;
 			sourceTree = "<group>";

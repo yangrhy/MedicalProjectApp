@@ -7,7 +7,7 @@
 import UIKit
 
 class EquipmentTableViewController: UITableViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,23 +49,16 @@ class EquipmentTableViewController: UITableViewController {
 
 
     }
-
+    var equipmentInfo: [String: Any] = [:]
+    
     @IBOutlet weak var ThermometerStepper: UIStepper!
-    
     @IBOutlet weak var SyringeStepper: UIStepper!
-    
     @IBOutlet weak var NebulizerStepper: UIStepper!
-    
     @IBOutlet weak var PulseOxStepper: UIStepper!
-    
     @IBOutlet weak var BloodGlucoseStepper: UIStepper!
-    
     @IBOutlet weak var WalkerStepper: UIStepper!
-    
     @IBOutlet weak var InfusionStepper: UIStepper!
-    
     @IBOutlet weak var IvSolutionStepper: UIStepper!
-    
     @IBOutlet weak var BedStepper: UIStepper!
     
     @IBAction func ThermometerStepChange(_ sender: UIStepper) {
@@ -105,36 +98,66 @@ class EquipmentTableViewController: UITableViewController {
     }
     
     @IBOutlet weak var ThermometerLabel: UILabel!
-    
     @IBOutlet weak var SyringeLabel: UILabel!
-    
     @IBOutlet weak var NebulizerLabel: UILabel!
-    
     @IBOutlet weak var PulseOximeterLabel: UILabel!
-    
     @IBOutlet weak var BloodGlucoseLabel: UILabel!
-    
     @IBOutlet weak var WalkerLabel: UILabel!
-    
     @IBOutlet weak var InfusionLabel: UILabel!
-    
     @IBOutlet weak var IvSolutionLabel: UILabel!
-    
-    
     @IBOutlet weak var BedLabel: UILabel!
     
     
     @IBAction func SubmitButton(_ sender: Any) {
         let myVC = storyboard?.instantiateViewController(withIdentifier: "SecondVC") as! DataViewController
-        myVC.ThermometerPassed = ThermometerLabel.text!
-        myVC.SyringePassed = SyringeLabel.text!
-        myVC.NebuilzerPassed = NebulizerLabel.text!
-        myVC.PulseOximeterPassed = PulseOximeterLabel.text!
-        myVC.BloodGlucosePassed = BloodGlucoseLabel.text!
-        myVC.WalkerPassed = WalkerLabel.text!
-        myVC.InfusionPassed = InfusionLabel.text!
-        myVC.IvSolutionPassed = IvSolutionLabel.text!
-        myVC.BedPassed = BedLabel.text!
+        
+        if let text = self.ThermometerLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["Thermometer"] = value
+            }
+        }
+        if let text = self.SyringeLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["Syringe"] = value
+            }
+        }
+        if let text = self.NebulizerLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["Nebulizer"] = value
+            }
+        }
+        if let text = self.PulseOximeterLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["Pulse Oximeter"] = value
+            }
+        }
+        if let text = self.BloodGlucoseLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["Blood Glucose Monitor"] = value
+            }
+        }
+        if let text = self.WalkerLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["Walker"] = value
+            }
+        }
+        if let text = self.InfusionLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["Infusion Pump"] = value
+            }
+        }
+        if let text = self.IvSolutionLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["IV Solution"] = value
+            }
+        }
+        if let text = self.BedLabel.text, let value = Int(text) {
+            if value > 0 {
+                equipmentInfo["Bed"] = value
+            }
+        }
+        myVC.equipmentInfo = self.equipmentInfo
+
         navigationController?.pushViewController(myVC, animated: true)
     }
     

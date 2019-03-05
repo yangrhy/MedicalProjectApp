@@ -11,13 +11,10 @@ import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate {
     
-  
     @IBOutlet weak var mapView: MKMapView!
     
     var customerInfo: DatabaseReference!
-    
-    
-    
+
     let regionRadius: CLLocationDistance = 5000
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
@@ -39,22 +36,30 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     
     func displayAnnotations() {
+        var latitude = ""
+        var longitude = ""
         
         let ref = Database.database().reference()
         ref.child("customer").observe(.childAdded, with: { (snapshot) in
             
-            let title = (snapshot.value as AnyObject)["customerName"] as! String!
-            let latitude = (snapshot.value as AnyObject)["latitude"] as! String!
-            let longitude = (snapshot.value as AnyObject)["longitude"] as! String!
-
+            let title = (snapshot.value as AnyObject)["customerName"] as! String
+            let location = (snapshot.value as AnyObject)["location"] as! [String:Any]
+            
+            for (key, value) in location {
+                if (key.lowercased() == "latitude".lowercased()) {
+                    latitude = value as! String
+                }
+                if (key.lowercased() == "longitude".lowercased()) {
+                    longitude = value as! String
+                }
+            }
             
             let annotation = MKPointAnnotation()
             annotation.title = title
-            annotation.coordinate = CLLocationCoordinate2D(latitude: (Double(latitude!))!, longitude: (Double(longitude!))!)
+            annotation.coordinate = CLLocationCoordinate2D(latitude: (Double(latitude))!, longitude: (Double(longitude))!)
 
             self.mapView.addAnnotation(annotation)
             
-
         })}
     
     

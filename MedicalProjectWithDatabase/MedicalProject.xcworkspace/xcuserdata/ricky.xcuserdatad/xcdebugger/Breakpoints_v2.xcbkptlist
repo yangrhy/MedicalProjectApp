@@ -10,59 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MedicalProject/DataViewController.swift"
-            timestampString = "572049726.716169"
+            timestampString = "573086882.1454149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "DataViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MedicalProject.DataViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; MedicalProject.DataViewController"
-                  moduleName = "MedicalProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ricky/Desktop/iOS%20Apps/MedicalProject/MedicalProjectWithDatabase/MedicalProject/DataViewController.swift"
-                  timestampString = "571186594.6231689"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "469">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MedicalProject.DataViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MedicalProject.DataViewController&gt;"
-                  moduleName = "MedicalProject"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ricky/Desktop/iOS%20Apps/MedicalProject/MedicalProjectWithDatabase/MedicalProject/DataViewController.swift"
-                  timestampString = "571186594.628951"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "27"
-                  endingLineNumber = "27"
-                  offsetFromSymbolStart = "433">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MedicalProject/DataViewController.swift"
-            timestampString = "572049726.716614"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "DataViewController"
             landmarkType = "3">
          </BreakpointContent>

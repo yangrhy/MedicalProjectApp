@@ -45,36 +45,17 @@ class CalendarViewController: UIViewController {
         deliveryInfo?.observeSingleEvent(of: .value) { (snapshot:DataSnapshot) in
             for customers in snapshot.children.allObjects as! [DataSnapshot] {
                 let custObj = customers.value as? [String: AnyObject]
+                
                 if (custObj?["date"] as? String == dateFormatter.string(from: date)){
                     let custName = custObj?["customerName"]
-                    let custCountry = custObj?["country"]
-                    let custCity = custObj?["city"]
-                    let custStreet = custObj?["street"]
-                    
+                    let location = custObj?["location"]
                     let custNum = custObj?["customerNumber"]
                     let delivDate = custObj?["date"]
                     let delivTime = custObj?["time"]
                     let purchType = custObj?["type"]
+                    let equipment = custObj?["equipment"]
                     
-                    let bedQuant = custObj?["Bed"]
-                    let bloodQuant = custObj?["BloodGlucoseMontior"]
-                    let iVQuant = custObj?["IVSolution"]
-                    let infusionQunat = custObj?["InfusionPump"]
-                    let nebulizerQuant = custObj?["Nebulizer"]
-                    let pulseQuant = custObj?["PulseOximeter"]
-                    let syringeQuant = custObj?["Syringe"]
-                    let thermomQuant = custObj?["Thermometer"]
-                    let walkerQuant =  custObj?["Walker"]
-                
-                    
-                    let customer = Customers(custName: custName as! String?, custNum: custNum as! String?, deliv: delivDate as! String?, time: delivTime as! String?, type: purchType as! String?, country: custCountry as! String?, city: custCity as! String?, street: custStreet as! String?, bed: bedQuant as! String?, bloodGlucose: bloodQuant as! String?,
-                                             iVSolution: iVQuant as! String?,
-                                             infusion: infusionQunat as! String?,
-                                             nebulizer: nebulizerQuant as! String?,
-                                             pulseOx: pulseQuant as! String?,
-                                             syringe: syringeQuant as! String?,
-                                             thermometer: thermomQuant as! String?,
-                                             walker: walkerQuant as! String?)
+                    let customer = Customers(custName: custName as! String?, custNum: custNum as! String?, deliv: delivDate as! String?, time: delivTime as! String?, type: purchType as! String?, location: location as! [String: Any], equipment: equipment as! [String: Any])
                     
                     self.deliveryList.append(customer)
                 }
@@ -138,7 +119,6 @@ class CalendarViewController: UIViewController {
             }
         }
     }
-    
 }
 
 extension CalendarViewController: JTAppleCalendarViewDataSource {
@@ -205,8 +185,22 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
         eachCustomer = deliveryList[indexPath.row]
         
         let customerInfoString: String?
+        var equipmentString = ""
+        var locationString = ""
         
-        customerInfoString = "Customer Name: \(eachCustomer.custName!)\nCountry: \(eachCustomer.country!)\nCity: \(eachCustomer.city!)\nStreet: \(eachCustomer.street!)\nCustomer Number: \(eachCustomer.custNum!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nPurchase Type: \(eachCustomer.type!)\nBed Quantity: \(eachCustomer.bed!)\nBlood Glucose: \(eachCustomer.bloodGlucose!)\nIV Solution: \(eachCustomer.iVSolution!)\nInfusion Pump: \(eachCustomer.infusion!)\nNebulizer: \(eachCustomer.nebulizer!)\nPulse Oximeter: \(eachCustomer.pulseOx!)\nSyringe: \(eachCustomer.syringe!)\nThermometer: \(eachCustomer.thermometer!)\nWalker: \(eachCustomer.walker!)"
+        for (key, value) in eachCustomer.equipment {
+            equipmentString += ("\n\(key): \(value)")
+        }
+        
+        for (key, value) in eachCustomer.location {
+            if ((key.lowercased() == "Street".lowercased()) ||
+                (key.lowercased() == "City".lowercased()) ||
+                (key.lowercased() == "Country".lowercased())) {
+                locationString += ("\n\(key): \(value)")
+            }
+        }
+        
+        customerInfoString = "Customer Name: \(eachCustomer.custName!)\n\(locationString)\nCustomer Number: \(eachCustomer.custNum!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nPurchase Type: \(eachCustomer.type!)\nEquipment Info:\(equipmentString)"
         
         cell.textLabel?.text = customerInfoString
         
