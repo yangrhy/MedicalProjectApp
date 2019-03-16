@@ -41,7 +41,6 @@ class CalendarViewController: UIViewController {
         
         deliveryInfo = Database.database().reference().child("customer")
         
-        
         deliveryInfo?.observeSingleEvent(of: .value) { (snapshot:DataSnapshot) in
             for customers in snapshot.children.allObjects as! [DataSnapshot] {
                 let custObj = customers.value as? [String: AnyObject]
