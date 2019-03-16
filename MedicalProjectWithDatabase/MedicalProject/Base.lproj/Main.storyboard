@@ -1252,6 +1252,7 @@
                         <outlet property="calendarView" destination="6eL-9y-vjL" id="fQa-Ge-XNr"/>
                         <outlet property="deliveryTableView" destination="pIa-MT-mMq" id="S0k-q5-fbT"/>
                         <outlet property="month" destination="gyA-oa-yI9" id="4hn-Md-5xs"/>
+                        <outlet property="returnTableView" destination="hue-E8-gMu" id="Vc1-N2-7dn"/>
                         <outlet property="year" destination="36L-rC-H4B" id="Unm-9E-Afk"/>
                     </connections>
                 </viewController>
