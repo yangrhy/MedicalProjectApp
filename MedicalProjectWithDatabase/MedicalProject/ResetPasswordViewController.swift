@@ -2,8 +2,6 @@
 //  ResetPasswordViewController.swift
 //  MedicalProject
 //
-//  Created by Ashley on 1/23/19.
-//  Copyright © 2019 Test. All rights reserved.
 //
 
 import UIKit
@@ -12,10 +10,8 @@ import FirebaseAuth
 
 class ResetPasswordViewController: UIViewController {
     
-    // Outlets
     @IBOutlet weak var emailTextField: UITextField!
 
-    // Reset Password Action
     @IBAction func submitAction(_ sender: AnyObject)
     {
         if self.emailTextField.text == "" {
