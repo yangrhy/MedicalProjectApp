@@ -205,6 +205,7 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell:UITableViewCell?
         
+        // populate the delivery table with data
         if tableView == self.deliveryTableView {
             cell = tableView.dequeueReusableCell(withIdentifier: "deliveryCell", for: indexPath) as! CustomerTableViewCell
             
@@ -236,7 +237,7 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
             cell!.textLabel?.text = customerInfoString
             
         }
-        
+        // populate the return table with data
         if tableView == self.returnTableView {
             cell = tableView.dequeueReusableCell(withIdentifier: "returnCell", for: indexPath) as! CustomerTableViewCell
             
