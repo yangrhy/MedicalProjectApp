@@ -17,6 +17,8 @@
 		AB45BB082208FBA30004C3CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AB45BB072208FBA30004C3CB /* GoogleService-Info.plist */; };
 		AB9116EA2213DE5C00D6DD90 /* Customers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9116E92213DE5B00D6DD90 /* Customers.swift */; };
 		ABAC81AC220AA1BF006D9DE3 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABAC81AB220AA1BF006D9DE3 /* DataViewController.swift */; };
+		ABB8F5B7224169EF00F03219 /* SignatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB8F5B6224169EF00F03219 /* SignatureViewController.swift */; };
+		ABB8F5B92241A52500F03219 /* ReturnSignatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB8F5B82241A52500F03219 /* ReturnSignatureViewController.swift */; };
 		F4443AE01DF2DFDA00800C92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4443ADF1DF2DFDA00800C92 /* AppDelegate.swift */; };
 		F4443AE51DF2DFDA00800C92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4443AE31DF2DFDA00800C92 /* Main.storyboard */; };
 		F4443AE71DF2DFDA00800C92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4443AE61DF2DFDA00800C92 /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 		AB45BB072208FBA30004C3CB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AB9116E92213DE5B00D6DD90 /* Customers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customers.swift; sourceTree = "<group>"; };
 		ABAC81AB220AA1BF006D9DE3 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		ABB8F5B6224169EF00F03219 /* SignatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignatureViewController.swift; sourceTree = "<group>"; };
+		ABB8F5B82241A52500F03219 /* ReturnSignatureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnSignatureViewController.swift; sourceTree = "<group>"; };
 		F4443ADC1DF2DFDA00800C92 /* MedicalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4443ADF1DF2DFDA00800C92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4443AE41DF2DFDA00800C92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 				F4443AE61DF2DFDA00800C92 /* Assets.xcassets */,
 				F4443AE81DF2DFDA00800C92 /* LaunchScreen.storyboard */,
 				F4443AE31DF2DFDA00800C92 /* Main.storyboard */,
+				ABB8F5B6224169EF00F03219 /* SignatureViewController.swift */,
+				ABB8F5B82241A52500F03219 /* ReturnSignatureViewController.swift */,
 			);
 			path = MedicalProject;
 			sourceTree = "<group>";
@@ -225,12 +231,11 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MedicalProject/Pods-MedicalProject-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-MedicalProject/Pods-MedicalProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/EPSignature/EPSignature.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -238,17 +243,16 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EPSignature.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MedicalProject/Pods-MedicalProject-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MedicalProject/Pods-MedicalProject-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -259,9 +263,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4443AF71DF2E34F00800C92 /* LoginViewController.swift in Sources */,
+				ABB8F5B92241A52500F03219 /* ReturnSignatureViewController.swift in Sources */,
 				ABAC81AC220AA1BF006D9DE3 /* DataViewController.swift in Sources */,
 				3833E0C122262909006305D2 /* EquipmentTableViewController.swift in Sources */,
 				F4443AF51DF2E34F00800C92 /* SignUpViewController.swift in Sources */,
+				ABB8F5B7224169EF00F03219 /* SignatureViewController.swift in Sources */,
 				9C5D09CD221666BB008B4E0C /* CalendarViewController.swift in Sources */,
 				9C19D1BE221050F200E45E82 /* CustomerInfoViewController.swift in Sources */,
 				389C55F522264C49008E3B8C /* MapViewController.swift in Sources */,
