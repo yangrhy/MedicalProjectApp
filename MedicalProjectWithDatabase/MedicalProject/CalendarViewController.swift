@@ -15,9 +15,11 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var month: UILabel!
     @IBOutlet weak var year: UILabel!
     
+    @IBOutlet weak var returnTableView: UITableView!
     @IBOutlet weak var deliveryTableView: UITableView!
     
     var deliveryList = [Customers]()
+    var returnList = [Customers]()
     
     var deliveryInfo: DatabaseReference!
     
@@ -27,6 +29,9 @@ class CalendarViewController: UIViewController {
         
         deliveryTableView.delegate = self
         deliveryTableView.dataSource = self
+        
+        returnTableView.delegate = self
+        returnTableView.dataSource = self
 
     }
     
@@ -40,7 +45,6 @@ class CalendarViewController: UIViewController {
         dateFormatter.dateFormat = "dd-MM-YYYY"
         
         deliveryInfo = Database.database().reference().child("customer")
-        
         
         deliveryInfo?.observeSingleEvent(of: .value) { (snapshot:DataSnapshot) in
             for customers in snapshot.children.allObjects as! [DataSnapshot] {
@@ -59,8 +63,21 @@ class CalendarViewController: UIViewController {
                     
                     self.deliveryList.append(customer)
                 }
+                
+                if (custObj?["returnDate"] as? String == dateFormatter.string(from: date)){
+                    let custName = custObj?["customerName"]
+                    let location = custObj?["location"]
+                    let custNum = custObj?["customerNumber"]
+                    let equipment = custObj?["equipment"]
+                    let returnDate = custObj?["returnDate"]
+                    
+                    let customer = Customers(custName: custName as! String?, custNum: custNum as! String?, returnDate: returnDate as! String?, location: location as! [String: Any], equipment: equipment as! [String: Any])
+                    
+                    self.returnList.append(customer)
+                }
             }
             self.deliveryTableView?.reloadData()
+            self.returnTableView?.reloadData()
         }
     }
     func setupCalendarView() {
@@ -162,6 +179,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
         handleSelectedCell(view: cell, cellState: cellState)
         handleCellDateColor(view: cell, cellState: cellState)
         deliveryList.removeAll()
+        returnList.removeAll()
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
@@ -171,40 +189,86 @@ extension CalendarViewController: JTAppleCalendarViewDelegate {
 
 extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return deliveryList.count
+        var count:Int?
+        
+        if tableView == self.deliveryTableView {
+            count = deliveryList.count
+        }
+        
+        if tableView == self.returnTableView {
+            count = returnList.count
+        }
+        
+        return count!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "deliveryCell", for: indexPath) as! CustomerTableViewCell
+        var cell:UITableViewCell?
         
-        // allows new line for each string of information
-        cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
-        
-        let eachCustomer:Customers
-        eachCustomer = deliveryList[indexPath.row]
-        
-        let customerInfoString: String?
-        var equipmentString = ""
-        var locationString = ""
-        
-        for (key, value) in eachCustomer.equipment {
-            equipmentString += ("\n\(key): \(value)")
-        }
-        
-        for (key, value) in eachCustomer.location {
-            if ((key.lowercased() == "Street".lowercased()) ||
-                (key.lowercased() == "City".lowercased()) ||
-                (key.lowercased() == "Country".lowercased())) {
-                locationString += ("\n\(key): \(value)")
+        // populate the delivery table with data
+        if tableView == self.deliveryTableView {
+            cell = tableView.dequeueReusableCell(withIdentifier: "deliveryCell", for: indexPath) as! CustomerTableViewCell
+            
+            // allows new line for each string of information
+            cell!.textLabel?.numberOfLines = 0
+            cell!.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
+            
+            let eachCustomer:Customers
+            eachCustomer = deliveryList[indexPath.row]
+            
+            let customerInfoString: String?
+            var equipmentString = ""
+            var locationString = ""
+            
+            for (key, value) in eachCustomer.equipment {
+                equipmentString += ("\n\(key): \(value)")
             }
+            
+            for (key, value) in eachCustomer.location {
+                if ((key.lowercased() == "Street".lowercased()) ||
+                    (key.lowercased() == "City".lowercased()) ||
+                    (key.lowercased() == "Country".lowercased())) {
+                    locationString += ("\n\(key): \(value)")
+                }
+            }
+            
+            customerInfoString = "Customer Name: \(eachCustomer.custName!)\n\(locationString)\nCustomer Number: \(eachCustomer.custNum!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nPurchase Type: \(eachCustomer.type!)\nEquipment Info:\(equipmentString)"
+            
+            cell!.textLabel?.text = customerInfoString
+            
         }
-        
-        customerInfoString = "Customer Name: \(eachCustomer.custName!)\n\(locationString)\nCustomer Number: \(eachCustomer.custNum!)\nDelivery Date: \(eachCustomer.deliv!)\nDelivery Time: \(eachCustomer.time!)\nPurchase Type: \(eachCustomer.type!)\nEquipment Info:\(equipmentString)"
-        
-        cell.textLabel?.text = customerInfoString
-        
-        return cell
+        // populate the return table with data
+        if tableView == self.returnTableView {
+            cell = tableView.dequeueReusableCell(withIdentifier: "returnCell", for: indexPath) as! CustomerTableViewCell
+            
+            // allows new line for each string of information
+            cell!.textLabel?.numberOfLines = 0
+            cell!.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping;
+            
+            let eachCustomer:Customers
+            eachCustomer = returnList[indexPath.row]
+            
+            let customerInfoString: String?
+            var equipmentString = ""
+            var locationString = ""
+            
+            for (key, value) in eachCustomer.equipment {
+                equipmentString += ("\n\(key): \(value)")
+            }
+            
+            for (key, value) in eachCustomer.location {
+                if ((key.lowercased() == "Street".lowercased()) ||
+                    (key.lowercased() == "City".lowercased()) ||
+                    (key.lowercased() == "Country".lowercased())) {
+                    locationString += ("\n\(key): \(value)")
+                }
+            }
+            
+            customerInfoString = "Customer Name: \(eachCustomer.custName!)\n\(locationString)\nCustomer Number: \(eachCustomer.custNum!)\nReturn Date: \(eachCustomer.returnDate!)\nEquipment Info:\(equipmentString)"
+            
+            cell!.textLabel?.text = customerInfoString
+            
+        }
+        return cell!
     }
 }
-
