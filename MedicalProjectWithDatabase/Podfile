@@ -6,10 +6,10 @@ target 'MedicalProject' do
   use_frameworks!
 
   # Pods for MedicalProject
-  pod 'Firebase/Core'
+  pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
-  pod 'RealmSwift'
-  pod 'JTAppleCalendar', '~>7.0'
-
+  pod 'Firebase/Storage'
+  pod 'EPSignature'
+  pod 'JTAppleCalendar'
 end
