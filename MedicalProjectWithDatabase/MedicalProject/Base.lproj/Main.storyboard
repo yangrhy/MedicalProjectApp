@@ -1298,7 +1298,7 @@
         <!--Signature for Purchases-->
         <scene sceneID="bZa-jS-tCj">
             <objects>
-                <viewController title="Signature for Purchases" id="QoA-IC-Acl" customClass="SignatureViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignatureView" title="Signature for Purchases" id="QoA-IC-Acl" customClass="SignatureViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mYf-sR-VPf"/>
                         <viewControllerLayoutGuide type="bottom" id="udK-Ni-BoC"/>
@@ -1361,6 +1361,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="custName" destination="yhy-3S-9I3" id="t8R-qn-hov"/>
                         <outlet property="imgHeightConstraint" destination="CLN-93-geP" id="TQx-pQ-XkR"/>
                         <outlet property="imgViewSignature" destination="uFl-Qb-tTe" id="hNL-5O-nAw"/>
                         <outlet property="imgWidthConstraint" destination="G2y-ta-BXV" id="ilY-Gj-FIK"/>
@@ -1374,7 +1375,7 @@
         <!--Signature for Returns-->
         <scene sceneID="n1U-Vt-g08">
             <objects>
-                <viewController title="Signature for Returns" id="cPf-ec-2Ii" customClass="ReturnSignatureViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReturnView" title="Signature for Returns" id="cPf-ec-2Ii" customClass="ReturnSignatureViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="B1U-bJ-YCq"/>
                         <viewControllerLayoutGuide type="bottom" id="jpJ-Wq-g8q"/>

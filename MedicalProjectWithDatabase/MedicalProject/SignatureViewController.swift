@@ -11,6 +11,9 @@ import EPSignature
 
 class SignatureViewController: UIViewController, EPSignatureDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
+    var customer:String?
+
+    @IBOutlet weak var custName: UITextField!
     
     @IBOutlet weak var imgWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var imgHeightConstraint: NSLayoutConstraint!
@@ -22,6 +25,11 @@ class SignatureViewController: UIViewController, EPSignatureDelegate, UIImagePic
         //signatureVC.title = "John Doe"
         let nav = UINavigationController(rootViewController: signatureVC)
         present(nav, animated: true, completion: nil)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        custName.text = customer
     }
     
     func epSignature(_: EPSignatureViewController, didCancel error : NSError) {

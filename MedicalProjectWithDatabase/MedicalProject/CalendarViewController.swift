@@ -271,4 +271,27 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
         }
         return cell!
     }
+    
+    // selecting certain cell sends information to signature controller
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        if tableView == self.deliveryTableView {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let SvC = storyboard.instantiateViewController(withIdentifier: "SignatureView") as! SignatureViewController
+            
+            let custInfo = deliveryList[indexPath.row]
+            SvC.customer = custInfo.custName
+            
+            self.navigationController?.pushViewController(SvC, animated: true)
+        }
+        if tableView == self.returnTableView {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let RsVc = storyboard.instantiateViewController(withIdentifier: "ReturnView") as! ReturnSignatureViewController
+            
+            let custInfo = returnList[indexPath.row]
+            RsVc.customer = custInfo.custName
+            self.navigationController?.pushViewController(RsVc, animated: true)
+
+        }
+    }
 }

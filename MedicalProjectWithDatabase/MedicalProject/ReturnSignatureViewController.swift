@@ -11,7 +11,8 @@ import EPSignature
 
 class ReturnSignatureViewController: UIViewController, EPSignatureDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
-    
+    var customer:String?
+
     @IBOutlet weak var imgWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var imgHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var imgViewSignature: UIImageView!
