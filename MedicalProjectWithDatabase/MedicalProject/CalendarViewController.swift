@@ -277,20 +277,35 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
     {
         if tableView == self.deliveryTableView {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let SvC = storyboard.instantiateViewController(withIdentifier: "SignatureView") as! SignatureViewController
-            
             let custInfo = deliveryList[indexPath.row]
-            SvC.customer = custInfo.custName
             
-            self.navigationController?.pushViewController(SvC, animated: true)
+            if (custInfo.type?.lowercased() == "Purchased".lowercased())
+            {
+                let purchVC = storyboard.instantiateViewController(withIdentifier: "SignatureView") as! SignatureViewController
+                
+                purchVC.custName = custInfo.custName
+                purchVC.custEquipment = custInfo.equipment
+                
+                self.navigationController?.pushViewController(purchVC, animated: true)
+            }
+            else if (custInfo.type?.lowercased() == "Rented".lowercased())
+            {
+                let rentalVC = storyboard.instantiateViewController(withIdentifier: "RentalSignatureView") as! RentalSignatureViewController
+                
+                rentalVC.custName = custInfo.custName
+                rentalVC.custEquipment = custInfo.equipment
+                self.navigationController?.pushViewController(rentalVC, animated: true)
+            }
         }
         if tableView == self.returnTableView {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let RsVc = storyboard.instantiateViewController(withIdentifier: "ReturnView") as! ReturnSignatureViewController
-            
             let custInfo = returnList[indexPath.row]
-            RsVc.customer = custInfo.custName
-            self.navigationController?.pushViewController(RsVc, animated: true)
+
+            let returnVC = storyboard.instantiateViewController(withIdentifier: "ReturnView") as! ReturnSignatureViewController
+            
+            returnVC.custName = custInfo.custName
+            returnVC.custEquipment = custInfo.equipment
+            self.navigationController?.pushViewController(returnVC, animated: true)
 
         }
     }
