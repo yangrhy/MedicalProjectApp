@@ -1,6 +1,6 @@
 # Medical Equipment Delivery Application
 
-This application was designed for Medical Equipment Companies. With this application, companies are able to schedule delieveries, keep track of customer information, and view the equipment that is needed for each delivery. Users are also able to select the equipment that is needed for each delivery along with the quanity of the items that are needed. A calendar and map are also implemented in order to view the deliveries needed for each day and the fastest route to the location. 
+This application was designed for Medical Equipment Companies. With this application, companies are able to schedule deliveries, keep track of customer information, and view the equipment that is needed for each delivery. Users are also able to select the equipment that is needed for each delivery along with the quantity of the items that are needed. A calendar and map are also implemented in order to view the deliveries needed for each day and the fastest route to the location. 
 
 ## Getting Started
 
@@ -14,9 +14,9 @@ These instructions will get you a copy of the project up and running on your loc
 ### Installing
 
 1. Download ZIP of the project
-2. Select "Medical Project With Database"
+2. Select "Medical Project with Database"
 3. Select "MedicalProject.xcworkspace"
-4. Once xcode has opened, select the play button
+4. Once Xcode has opened, select the play button
 
 ## Built With
 
@@ -32,7 +32,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 * [CocoaPods](https://cocoapods.org/) - Dependency manager with pod libraries
 * [Firebase](https://cocoapods.org/pods/Firebase) - Login authorization, database, and storage
-* [EPSignature](https://github.com/ipraba/EPSignature) - Signautre implementation
+* [EPSignature](https://github.com/ipraba/EPSignature) - Signature implementation
 * [JTAppleCalendar](https://github.com/patchthecode/JTAppleCalendar) - Calendar implementation
 * [CoreLocation](https://developer.apple.com/documentation/corelocation) - Geographic locations
 * [MapKit](https://developer.apple.com/documentation/mapkit) - Display maps
