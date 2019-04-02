@@ -8,6 +8,7 @@
 import UIKit
 import JTAppleCalendar
 import Firebase
+import FirebaseDatabase
 
 class CalendarViewController: UIViewController {
     let formatter = DateFormatter()
@@ -270,5 +271,43 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
             
         }
         return cell!
+    }
+    
+    // selecting certain cell sends information to signature controller
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        if tableView == self.deliveryTableView {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let custInfo = deliveryList[indexPath.row]
+            
+            if (custInfo.type?.lowercased() == "Purchased".lowercased())
+            {
+                let purchVC = storyboard.instantiateViewController(withIdentifier: "SignatureView") as! SignatureViewController
+                
+                purchVC.custName = custInfo.custName
+                purchVC.custEquipment = custInfo.equipment
+                
+                self.navigationController?.pushViewController(purchVC, animated: true)
+            }
+            else if (custInfo.type?.lowercased() == "Rented".lowercased())
+            {
+                let rentalVC = storyboard.instantiateViewController(withIdentifier: "RentalSignatureView") as! RentalSignatureViewController
+                
+                rentalVC.custName = custInfo.custName
+                rentalVC.custEquipment = custInfo.equipment
+                self.navigationController?.pushViewController(rentalVC, animated: true)
+            }
+        }
+        if tableView == self.returnTableView {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let custInfo = returnList[indexPath.row]
+
+            let returnVC = storyboard.instantiateViewController(withIdentifier: "ReturnView") as! ReturnSignatureViewController
+            
+            returnVC.custName = custInfo.custName
+            returnVC.custEquipment = custInfo.equipment
+            self.navigationController?.pushViewController(returnVC, animated: true)
+
+        }
     }
 }

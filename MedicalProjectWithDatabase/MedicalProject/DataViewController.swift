@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import CoreLocation
+import FirebaseDatabase
 
 class DataViewController: UIViewController{
     var equipmentInfo: [String: Any] = [:]
