@@ -652,7 +652,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mBV-xq-Mfm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="190" y="1769"/>
+            <point key="canvasLocation" x="166" y="1688"/>
         </scene>
         <!--Equipment Form-->
         <scene sceneID="niy-qr-ApQ">
@@ -956,7 +956,15 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Signature for Returns"/>
                                 <connections>
-                                    <segue destination="cPf-ec-2Ii" kind="show" id="Taw-71-aMy"/>
+                                    <segue destination="l9I-Zd-uog" kind="show" id="OHC-Cp-GLO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agP-3i-WQm">
+                                <rect key="frame" x="115" y="334" width="144" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Signature for Rentals"/>
+                                <connections>
+                                    <segue destination="iuR-2f-sMS" kind="show" id="AnE-CL-mhQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1012,7 +1020,7 @@
         <!--Customer Info-->
         <scene sceneID="c6z-LV-JhB">
             <objects>
-                <viewController title="Database" id="ILJ-dS-ms3" userLabel="Customer Info" customClass="CustomerInfoViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="List of Customers" id="ILJ-dS-ms3" userLabel="Customer Info" customClass="CustomerInfoViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k0F-lC-NWE"/>
                         <viewControllerLayoutGuide type="bottom" id="A47-AT-QhR"/>
@@ -1057,10 +1065,10 @@
             </objects>
             <point key="canvasLocation" x="3317.5999999999999" y="1716.7916041979013"/>
         </scene>
-        <!--Ib Calendar Data Source-->
+        <!--Delivery Calendar Schedule-->
         <scene sceneID="YbI-cf-sy6">
             <objects>
-                <viewController title="Calendar" id="n2U-VS-69b" customClass="CalendarViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Delivery Calendar" id="n2U-VS-69b" userLabel="Delivery Calendar Schedule" customClass="CalendarViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rtD-Bf-TKz"/>
                         <viewControllerLayoutGuide type="bottom" id="3FP-V2-xLC"/>
@@ -1298,7 +1306,7 @@
         <!--Signature for Purchases-->
         <scene sceneID="bZa-jS-tCj">
             <objects>
-                <viewController title="Signature for Purchases" id="QoA-IC-Acl" customClass="SignatureViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignatureView" title="Signature for Purchases" id="QoA-IC-Acl" customClass="SignatureViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mYf-sR-VPf"/>
                         <viewControllerLayoutGuide type="bottom" id="udK-Ni-BoC"/>
@@ -1307,60 +1315,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uFl-Qb-tTe">
-                                <rect key="frame" x="67" y="171" width="240" height="300"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uFl-Qb-tTe">
+                                <rect key="frame" x="67.5" y="171" width="240" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="CLN-93-geP"/>
                                     <constraint firstAttribute="width" constant="240" id="G2y-ta-BXV"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZb-yJ-Izt">
-                                <rect key="frame" x="119" y="557" width="136" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="136" id="MfA-5e-Nrv"/>
-                                    <constraint firstAttribute="height" constant="30" id="zOs-C3-bGl"/>
-                                </constraints>
-                                <state key="normal" title="Add Signature"/>
-                                <connections>
-                                    <action selector="onTouchSignatureButtonWithSender:" destination="QoA-IC-Acl" eventType="touchUpInside" id="B2g-3z-ZSI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Utp-Mi-UWO">
-                                <rect key="frame" x="92" y="595" width="190" height="30"/>
-                                <state key="normal" title="Upload Customer Signature"/>
-                                <connections>
-                                    <action selector="uploadSignature:" destination="QoA-IC-Acl" eventType="touchUpInside" id="2N6-9W-Rqb"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhy-3S-9I3">
-                                <rect key="frame" x="67" y="121" width="240" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhy-3S-9I3">
+                                <rect key="frame" x="67" y="120.5" width="240" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Customer Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fF-K3-4bF">
-                                <rect key="frame" x="109" y="92" width="156" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fF-K3-4bF">
+                                <rect key="frame" x="109" y="92" width="156" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Purchase Agreement" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yhN-yF-lBX">
+                                <rect key="frame" x="31" y="158.5" width="328" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="c25-3O-Hnx"/>
+                                    <constraint firstAttribute="width" constant="328" id="gwB-Gr-2Rf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qUC-xs-qNS">
+                                <rect key="frame" x="92" y="557" width="190" height="68"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZb-yJ-Izt">
+                                        <rect key="frame" x="27" y="0.0" width="136" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="136" id="MfA-5e-Nrv"/>
+                                            <constraint firstAttribute="height" constant="30" id="zOs-C3-bGl"/>
+                                        </constraints>
+                                        <state key="normal" title="Add Signature"/>
+                                        <connections>
+                                            <action selector="onTouchSignatureButtonWithSender:" destination="QoA-IC-Acl" eventType="touchUpInside" id="B2g-3z-ZSI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Utp-Mi-UWO">
+                                        <rect key="frame" x="0.0" y="38" width="190" height="30"/>
+                                        <state key="normal" title="Upload Customer Signature"/>
+                                        <connections>
+                                            <action selector="uploadSignature:" destination="QoA-IC-Acl" eventType="touchUpInside" id="2N6-9W-Rqb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uFl-Qb-tTe" firstAttribute="centerX" secondItem="Qf5-vx-l4e" secondAttribute="centerX" id="1Tf-QF-M0k"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wZb-yJ-Izt" secondAttribute="trailing" constant="104" id="AWL-pI-rWU"/>
-                            <constraint firstItem="udK-Ni-BoC" firstAttribute="top" secondItem="Utp-Mi-UWO" secondAttribute="bottom" constant="42" id="N55-lj-pBD"/>
-                            <constraint firstItem="wZb-yJ-Izt" firstAttribute="leading" secondItem="Qf5-vx-l4e" secondAttribute="leadingMargin" constant="103" id="Yfe-BQ-8bw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Utp-Mi-UWO" secondAttribute="trailing" constant="77" id="eD7-zR-BtV"/>
-                            <constraint firstItem="Utp-Mi-UWO" firstAttribute="leading" secondItem="Qf5-vx-l4e" secondAttribute="leadingMargin" constant="76" id="fVe-lG-kT9"/>
-                            <constraint firstItem="wZb-yJ-Izt" firstAttribute="top" secondItem="uFl-Qb-tTe" secondAttribute="bottom" constant="8" id="kkm-Gl-pvv"/>
-                            <constraint firstItem="udK-Ni-BoC" firstAttribute="top" secondItem="wZb-yJ-Izt" secondAttribute="bottom" constant="80" id="mIq-6w-rV2"/>
-                            <constraint firstItem="wZb-yJ-Izt" firstAttribute="centerX" secondItem="Qf5-vx-l4e" secondAttribute="centerX" id="zaU-a9-35P"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1fF-K3-4bF" secondAttribute="trailing" constant="94" id="6qx-Ka-nku"/>
+                            <constraint firstItem="udK-Ni-BoC" firstAttribute="top" secondItem="qUC-xs-qNS" secondAttribute="bottom" constant="42" id="AIZ-Rz-5qB"/>
+                            <constraint firstItem="yhy-3S-9I3" firstAttribute="leading" secondItem="Qf5-vx-l4e" secondAttribute="leadingMargin" constant="51" id="ASJ-cc-VYM"/>
+                            <constraint firstItem="yhN-yF-lBX" firstAttribute="top" secondItem="yhy-3S-9I3" secondAttribute="bottom" constant="8" id="Mhe-Xe-7BR"/>
+                            <constraint firstItem="yhN-yF-lBX" firstAttribute="top" secondItem="yhy-3S-9I3" secondAttribute="bottom" constant="8" id="PuH-LC-RZY"/>
+                            <constraint firstItem="qUC-xs-qNS" firstAttribute="top" secondItem="uFl-Qb-tTe" secondAttribute="bottom" constant="86" id="WRK-4t-HTP"/>
+                            <constraint firstItem="1fF-K3-4bF" firstAttribute="leading" secondItem="Qf5-vx-l4e" secondAttribute="leadingMargin" constant="93" id="Yhc-IV-npo"/>
+                            <constraint firstItem="yhy-3S-9I3" firstAttribute="top" secondItem="1fF-K3-4bF" secondAttribute="bottom" constant="8" id="b1N-Ym-vU8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qUC-xs-qNS" secondAttribute="trailing" constant="77" id="hGZ-qV-QM3"/>
+                            <constraint firstItem="1fF-K3-4bF" firstAttribute="top" secondItem="mYf-sR-VPf" secondAttribute="bottom" constant="28" id="nUC-lZ-apB"/>
+                            <constraint firstItem="yhN-yF-lBX" firstAttribute="trailing" secondItem="Qf5-vx-l4e" secondAttribute="trailingMargin" id="pza-bR-hS4"/>
+                            <constraint firstItem="qUC-xs-qNS" firstAttribute="leading" secondItem="Qf5-vx-l4e" secondAttribute="leadingMargin" constant="76" id="rWG-If-Qkf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yhy-3S-9I3" secondAttribute="trailing" constant="52" id="sWT-RF-Stc"/>
+                            <constraint firstItem="yhy-3S-9I3" firstAttribute="top" secondItem="1fF-K3-4bF" secondAttribute="bottom" constant="8" id="vJF-Lo-F8B"/>
+                            <constraint firstItem="yhN-yF-lBX" firstAttribute="leading" secondItem="Qf5-vx-l4e" secondAttribute="leadingMargin" constant="15" id="xKE-iL-JpU"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="agreementTextView" destination="yhN-yF-lBX" id="1OM-Fz-32Z"/>
                         <outlet property="imgHeightConstraint" destination="CLN-93-geP" id="TQx-pQ-XkR"/>
                         <outlet property="imgViewSignature" destination="uFl-Qb-tTe" id="hNL-5O-nAw"/>
                         <outlet property="imgWidthConstraint" destination="G2y-ta-BXV" id="ilY-Gj-FIK"/>
@@ -1369,83 +1398,201 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOU-ns-RFW" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1370" y="2163"/>
+            <point key="canvasLocation" x="1448.8" y="2162.9685157421291"/>
         </scene>
         <!--Signature for Returns-->
-        <scene sceneID="n1U-Vt-g08">
+        <scene sceneID="x6M-hh-xrb">
             <objects>
-                <viewController title="Signature for Returns" id="cPf-ec-2Ii" customClass="ReturnSignatureViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReturnView" title="Signature for Returns" id="l9I-Zd-uog" customClass="ReturnSignatureViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="B1U-bJ-YCq"/>
-                        <viewControllerLayoutGuide type="bottom" id="jpJ-Wq-g8q"/>
+                        <viewControllerLayoutGuide type="top" id="Nod-tk-hhu"/>
+                        <viewControllerLayoutGuide type="bottom" id="f31-L8-Sby"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mgw-ud-EMq">
+                    <view key="view" contentMode="scaleToFill" id="UYo-j7-fMk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MzC-Wh-99K">
-                                <rect key="frame" x="67" y="171" width="240" height="300"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4oF-PA-sbh">
+                                <rect key="frame" x="67.5" y="171" width="240" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="QIK-Ix-lfK"/>
-                                    <constraint firstAttribute="width" constant="240" id="pzh-1z-UcB"/>
+                                    <constraint firstAttribute="width" constant="240" id="MlS-NI-M7y"/>
+                                    <constraint firstAttribute="height" constant="300" id="l6E-eU-4M9"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1v-Fp-pPt">
-                                <rect key="frame" x="119" y="557" width="136" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="AMU-0J-dqN"/>
-                                    <constraint firstAttribute="width" constant="136" id="tfw-hd-bXN"/>
-                                </constraints>
-                                <state key="normal" title="Add Signature"/>
-                                <connections>
-                                    <action selector="onTouchSignatureButtonWithSender:" destination="cPf-ec-2Ii" eventType="touchUpInside" id="eZ1-cr-Li6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALS-ok-JMM">
-                                <rect key="frame" x="92" y="595" width="190" height="30"/>
-                                <state key="normal" title="Upload Customer Signature"/>
-                                <connections>
-                                    <action selector="uploadSignature:" destination="cPf-ec-2Ii" eventType="touchUpInside" id="Wyr-TF-htV"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jjZ-ap-37r">
-                                <rect key="frame" x="67" y="121" width="240" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yk3-WL-GjU">
+                                <rect key="frame" x="67" y="120.5" width="240" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Customer Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYR-PS-uPy">
-                                <rect key="frame" x="109" y="92" width="156" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzv-ft-eRH">
+                                <rect key="frame" x="109" y="92" width="156" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Return Agreement" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mm3-qO-FKB">
+                                <rect key="frame" x="31" y="158.5" width="328" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="328" id="dmc-x9-WHE"/>
+                                    <constraint firstAttribute="height" constant="300" id="wms-qh-ZLJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nJU-0H-rk8">
+                                <rect key="frame" x="92" y="557" width="190" height="68"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPn-kU-tz0">
+                                        <rect key="frame" x="27" y="0.0" width="136" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="136" id="22u-n8-WUr"/>
+                                            <constraint firstAttribute="height" constant="30" id="nJj-MB-JHb"/>
+                                        </constraints>
+                                        <state key="normal" title="Add Signature"/>
+                                        <connections>
+                                            <action selector="onTouchSignatureButtonWithSender:" destination="l9I-Zd-uog" eventType="touchUpInside" id="jD7-Av-AuX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GVu-KU-Ift">
+                                        <rect key="frame" x="0.0" y="38" width="190" height="30"/>
+                                        <state key="normal" title="Upload Customer Signature"/>
+                                        <connections>
+                                            <action selector="uploadSignature:" destination="l9I-Zd-uog" eventType="touchUpInside" id="8k0-53-n4M"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="r1v-Fp-pPt" secondAttribute="trailing" constant="104" id="5PF-8K-HVK"/>
-                            <constraint firstItem="MzC-Wh-99K" firstAttribute="centerX" secondItem="mgw-ud-EMq" secondAttribute="centerX" id="NxQ-Ug-6Lh"/>
-                            <constraint firstItem="jpJ-Wq-g8q" firstAttribute="top" secondItem="r1v-Fp-pPt" secondAttribute="bottom" constant="80" id="U4H-Ta-Py2"/>
-                            <constraint firstItem="r1v-Fp-pPt" firstAttribute="top" secondItem="MzC-Wh-99K" secondAttribute="bottom" constant="8" id="YgU-1o-4rI"/>
-                            <constraint firstItem="r1v-Fp-pPt" firstAttribute="leading" secondItem="mgw-ud-EMq" secondAttribute="leadingMargin" constant="103" id="cKP-OF-yj3"/>
-                            <constraint firstItem="jpJ-Wq-g8q" firstAttribute="top" secondItem="ALS-ok-JMM" secondAttribute="bottom" constant="42" id="eGu-Eb-t2A"/>
-                            <constraint firstItem="r1v-Fp-pPt" firstAttribute="centerX" secondItem="mgw-ud-EMq" secondAttribute="centerX" id="p0f-4A-hKU"/>
-                            <constraint firstItem="ALS-ok-JMM" firstAttribute="leading" secondItem="mgw-ud-EMq" secondAttribute="leadingMargin" constant="76" id="tdm-5S-1e7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ALS-ok-JMM" secondAttribute="trailing" constant="77" id="wgJ-Qb-TSy"/>
+                            <constraint firstItem="mm3-qO-FKB" firstAttribute="top" secondItem="yk3-WL-GjU" secondAttribute="bottom" constant="8" id="7da-6D-7zI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bzv-ft-eRH" secondAttribute="trailing" constant="94" id="Baw-5f-ZAM"/>
+                            <constraint firstItem="bzv-ft-eRH" firstAttribute="top" secondItem="Nod-tk-hhu" secondAttribute="bottom" constant="28" id="I6c-bd-xNe"/>
+                            <constraint firstItem="yk3-WL-GjU" firstAttribute="leading" secondItem="UYo-j7-fMk" secondAttribute="leadingMargin" constant="51" id="KLI-ya-aae"/>
+                            <constraint firstItem="mm3-qO-FKB" firstAttribute="trailing" secondItem="UYo-j7-fMk" secondAttribute="trailingMargin" id="MUX-xz-N4L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yk3-WL-GjU" secondAttribute="trailing" constant="52" id="OXo-DJ-jwg"/>
+                            <constraint firstItem="nJU-0H-rk8" firstAttribute="top" secondItem="4oF-PA-sbh" secondAttribute="bottom" constant="86" id="ObF-xE-i5J"/>
+                            <constraint firstItem="4oF-PA-sbh" firstAttribute="centerX" secondItem="UYo-j7-fMk" secondAttribute="centerX" id="bft-KC-0lE"/>
+                            <constraint firstItem="yk3-WL-GjU" firstAttribute="top" secondItem="bzv-ft-eRH" secondAttribute="bottom" constant="8" id="i5D-Cy-zsC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nJU-0H-rk8" secondAttribute="trailing" constant="77" id="i75-hR-gHL"/>
+                            <constraint firstItem="f31-L8-Sby" firstAttribute="top" secondItem="nJU-0H-rk8" secondAttribute="bottom" constant="42" id="jkI-Tx-39m"/>
+                            <constraint firstItem="nJU-0H-rk8" firstAttribute="leading" secondItem="UYo-j7-fMk" secondAttribute="leadingMargin" constant="76" id="k6f-Jf-CYB"/>
+                            <constraint firstItem="mm3-qO-FKB" firstAttribute="top" secondItem="yk3-WL-GjU" secondAttribute="bottom" constant="8" id="qMG-UQ-qeM"/>
+                            <constraint firstItem="mm3-qO-FKB" firstAttribute="leading" secondItem="UYo-j7-fMk" secondAttribute="leadingMargin" constant="15" id="sCM-fC-eBH"/>
+                            <constraint firstItem="bzv-ft-eRH" firstAttribute="leading" secondItem="UYo-j7-fMk" secondAttribute="leadingMargin" constant="93" id="vzn-v6-0qN"/>
+                            <constraint firstItem="yk3-WL-GjU" firstAttribute="top" secondItem="bzv-ft-eRH" secondAttribute="bottom" constant="8" id="xgO-Gw-xc6"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imgHeightConstraint" destination="QIK-Ix-lfK" id="7Ul-rk-VGl"/>
-                        <outlet property="imgViewSignature" destination="MzC-Wh-99K" id="bfn-SI-UQm"/>
-                        <outlet property="imgWidthConstraint" destination="pzh-1z-UcB" id="bke-wU-vHu"/>
-                        <outlet property="user" destination="jjZ-ap-37r" id="6Ju-ni-kFi"/>
+                        <outlet property="agreementTextView" destination="mm3-qO-FKB" id="oix-XY-TLT"/>
+                        <outlet property="imgHeightConstraint" destination="l6E-eU-4M9" id="PfX-4N-hc3"/>
+                        <outlet property="imgViewSignature" destination="4oF-PA-sbh" id="khf-Sp-dez"/>
+                        <outlet property="imgWidthConstraint" destination="MlS-NI-M7y" id="aeo-eR-G2N"/>
+                        <outlet property="user" destination="yk3-WL-GjU" id="p4e-BQ-7Xd"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="C2u-Hq-d02" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6BA-iC-Y9l" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2204" y="2465"/>
+            <point key="canvasLocation" x="2215" y="2398"/>
+        </scene>
+        <!--Signature for Rentals-->
+        <scene sceneID="JaV-mY-f9l">
+            <objects>
+                <viewController storyboardIdentifier="RentalSignatureView" title="Signature for Rentals" id="iuR-2f-sMS" customClass="RentalSignatureViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bSf-id-WkV"/>
+                        <viewControllerLayoutGuide type="bottom" id="Iri-e9-Xqo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fKV-ZD-FEB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gZg-Xc-1P2">
+                                <rect key="frame" x="67.5" y="171" width="240" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="nKU-Ps-wIx"/>
+                                    <constraint firstAttribute="height" constant="300" id="v8U-Wr-vTF"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JxT-XC-4cW">
+                                <rect key="frame" x="67" y="120.5" width="240" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMb-FD-kvp">
+                                <rect key="frame" x="109" y="92" width="156" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Rental Agreement" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="O1t-Ds-Jei">
+                                <rect key="frame" x="31" y="158.5" width="328" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="1mF-Jd-bP8"/>
+                                    <constraint firstAttribute="width" constant="328" id="kzt-7p-sLh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0VN-uV-kCV">
+                                <rect key="frame" x="92" y="557" width="190" height="68"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIZ-8e-hzC">
+                                        <rect key="frame" x="27" y="0.0" width="136" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="136" id="YjI-ox-y2m"/>
+                                            <constraint firstAttribute="height" constant="30" id="rDh-6t-La9"/>
+                                        </constraints>
+                                        <state key="normal" title="Add Signature"/>
+                                        <connections>
+                                            <action selector="onTouchSignatureButtonWithSender:" destination="iuR-2f-sMS" eventType="touchUpInside" id="bfa-iX-Pk4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYp-gV-2gr">
+                                        <rect key="frame" x="0.0" y="38" width="190" height="30"/>
+                                        <state key="normal" title="Upload Customer Signature"/>
+                                        <connections>
+                                            <action selector="uploadSignature:" destination="iuR-2f-sMS" eventType="touchUpInside" id="cSA-A9-DFb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rMb-FD-kvp" firstAttribute="leading" secondItem="fKV-ZD-FEB" secondAttribute="leadingMargin" constant="93" id="AC9-9X-c5h"/>
+                            <constraint firstItem="JxT-XC-4cW" firstAttribute="top" secondItem="rMb-FD-kvp" secondAttribute="bottom" constant="8" id="Aiq-qz-NUl"/>
+                            <constraint firstItem="0VN-uV-kCV" firstAttribute="top" secondItem="gZg-Xc-1P2" secondAttribute="bottom" constant="86" id="IPa-kF-RFI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rMb-FD-kvp" secondAttribute="trailing" constant="94" id="JgO-Ls-dDo"/>
+                            <constraint firstItem="gZg-Xc-1P2" firstAttribute="centerX" secondItem="fKV-ZD-FEB" secondAttribute="centerX" id="OVI-AF-uZl"/>
+                            <constraint firstItem="Iri-e9-Xqo" firstAttribute="top" secondItem="0VN-uV-kCV" secondAttribute="bottom" constant="42" id="REO-wX-Ity"/>
+                            <constraint firstItem="0VN-uV-kCV" firstAttribute="leading" secondItem="fKV-ZD-FEB" secondAttribute="leadingMargin" constant="76" id="SnU-3o-Eu9"/>
+                            <constraint firstItem="JxT-XC-4cW" firstAttribute="top" secondItem="rMb-FD-kvp" secondAttribute="bottom" constant="8" id="ZpR-PU-HdR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JxT-XC-4cW" secondAttribute="trailing" constant="52" id="c4I-sm-kqa"/>
+                            <constraint firstItem="O1t-Ds-Jei" firstAttribute="leading" secondItem="fKV-ZD-FEB" secondAttribute="leadingMargin" constant="15" id="d3q-gg-rGK"/>
+                            <constraint firstItem="O1t-Ds-Jei" firstAttribute="trailing" secondItem="fKV-ZD-FEB" secondAttribute="trailingMargin" id="dZ0-ns-fvm"/>
+                            <constraint firstItem="JxT-XC-4cW" firstAttribute="leading" secondItem="fKV-ZD-FEB" secondAttribute="leadingMargin" constant="51" id="iT8-E2-HxT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0VN-uV-kCV" secondAttribute="trailing" constant="77" id="jcu-LD-y8v"/>
+                            <constraint firstItem="O1t-Ds-Jei" firstAttribute="top" secondItem="JxT-XC-4cW" secondAttribute="bottom" constant="8" id="oIz-eS-Chp"/>
+                            <constraint firstItem="O1t-Ds-Jei" firstAttribute="top" secondItem="JxT-XC-4cW" secondAttribute="bottom" constant="8" id="sAc-YB-y4m"/>
+                            <constraint firstItem="rMb-FD-kvp" firstAttribute="top" secondItem="bSf-id-WkV" secondAttribute="bottom" constant="28" id="wIM-Sf-4RF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="agreementTextView" destination="O1t-Ds-Jei" id="uvf-sG-LIi"/>
+                        <outlet property="imgHeightConstraint" destination="v8U-Wr-vTF" id="Xda-be-Cj1"/>
+                        <outlet property="imgViewSignature" destination="gZg-Xc-1P2" id="O02-fa-cUK"/>
+                        <outlet property="imgWidthConstraint" destination="nKU-Ps-wIx" id="ypJ-Iw-u30"/>
+                        <outlet property="user" destination="JxT-XC-4cW" id="2em-kp-twh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qY1-sM-2hG" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="786" y="2163"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
