@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rfD-IX-jej">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pHr-FP-01c">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1022,10 +1022,10 @@
             </objects>
             <point key="canvasLocation" x="1756" y="1034.9325337331336"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Delivery Locations-->
         <scene sceneID="RXB-FH-1jK">
             <objects>
-                <viewController id="zOz-92-QFo" customClass="MapViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Delivery Locations" id="zOz-92-QFo" customClass="MapViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uk2-HG-Ag1"/>
                         <viewControllerLayoutGuide type="bottom" id="Jp2-vI-RVy"/>
@@ -1035,11 +1035,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JnK-U8-tH8">
-                                <rect key="frame" x="16" y="72" width="343" height="587"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="587" id="6eb-pv-7LG"/>
-                                    <constraint firstAttribute="width" constant="343" id="ve2-Ud-gxz"/>
+                                    <constraint firstAttribute="width" constant="375" id="7dt-nh-oFL"/>
+                                    <constraint firstAttribute="height" constant="603" id="yWe-g3-YBf"/>
                                 </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Ng5-IQ-6yS" appends="YES" id="6kI-rp-Goj"/>
@@ -1048,10 +1048,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JnK-U8-tH8" firstAttribute="top" secondItem="uk2-HG-Ag1" secondAttribute="bottom" constant="8" id="Gm2-s9-acp"/>
-                            <constraint firstItem="Jp2-vI-RVy" firstAttribute="top" secondItem="JnK-U8-tH8" secondAttribute="bottom" constant="8" id="KYg-LX-6Jv"/>
-                            <constraint firstItem="JnK-U8-tH8" firstAttribute="trailing" secondItem="GOd-ud-C9H" secondAttribute="trailingMargin" id="k32-Nu-CuE"/>
-                            <constraint firstItem="JnK-U8-tH8" firstAttribute="leading" secondItem="GOd-ud-C9H" secondAttribute="leadingMargin" id="w79-FB-xGF"/>
+                            <constraint firstAttribute="trailing" secondItem="JnK-U8-tH8" secondAttribute="trailing" id="W7p-FM-OKp"/>
+                            <constraint firstItem="Jp2-vI-RVy" firstAttribute="top" secondItem="JnK-U8-tH8" secondAttribute="bottom" id="gbP-z7-8y9"/>
+                            <constraint firstItem="JnK-U8-tH8" firstAttribute="top" secondItem="uk2-HG-Ag1" secondAttribute="bottom" id="sc1-uB-1BW"/>
+                            <constraint firstItem="JnK-U8-tH8" firstAttribute="leading" secondItem="GOd-ud-C9H" secondAttribute="leading" id="wJp-w4-mto"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1066,7 +1066,7 @@
         <!--Customer Info-->
         <scene sceneID="c6z-LV-JhB">
             <objects>
-                <viewController title="List of Customers" id="ILJ-dS-ms3" userLabel="Customer Info" customClass="CustomerInfoViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Customer Information" id="ILJ-dS-ms3" userLabel="Customer Info" customClass="CustomerInfoViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k0F-lC-NWE"/>
                         <viewControllerLayoutGuide type="bottom" id="A47-AT-QhR"/>
@@ -1075,14 +1075,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Customer Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdq-wV-rD8">
-                                <rect key="frame" x="104" y="86" width="167" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fWf-4o-Hpe">
-                                <rect key="frame" x="0.0" y="115" width="375" height="552"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -1098,10 +1092,6 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="fdq-wV-rD8" firstAttribute="centerX" secondItem="cAY-MK-JEl" secondAttribute="centerX" id="JOa-uc-rUg"/>
-                            <constraint firstItem="fdq-wV-rD8" firstAttribute="top" secondItem="k0F-lC-NWE" secondAttribute="bottom" constant="22" id="ynI-lD-KT6"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="customerTableView" destination="fWf-4o-Hpe" id="dNE-va-3eA"/>
