@@ -33,16 +33,25 @@ _The iPhone X, XR, XS, and XS Max run with no issues, but are not configured for
 
 ## Features
 ![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Login.png)
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Login.png"  width="400" height="685">
 ![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Sign%20Up.png)
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Sign%20Up.png"  width="400" height="685">
 ![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Reset%20Password.png)
-![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Main%20Menu.png)
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Login.png"  width="400" height="685">
+![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Login.png)
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Login.png"  width="400" height="685">
 ![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Equipment%20Form.png)
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Equipment%20Form.png"  width="400" height="685">
 ![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Add%20Equipment.png)
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Add%20Equipment.png"  width="400" height="685">
 ![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Calendar.png)
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Calendar.png"  width="400" height="685">
 ![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Maps.png)
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Maps.png"  width="400" height="685">
 ![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Agreement.png)
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Agreement.png"  width="400" height="685">
 ![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Signature.png)
-
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Signature.png"  width="400" height="685">
 
 
 
