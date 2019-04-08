@@ -18,6 +18,20 @@ These instructions will get you a copy of the project up and running on your loc
 3. Select "MedicalProject.xcworkspace"
 4. Once Xcode has opened, select the play button
 
+### Compatible iPhone models
+
+* iPhone 6
+* iPhone 6 Plus
+* iPhone 6s
+* iPhone 6s Plus 
+* iPhone 7
+* iPhone 7 Plus
+* iPhone 8
+* iPhone 8 Plus
+
+_The iPhone X, XR, XS, and XS Max run with no issues, but are not configured for the display size_
+
+
 ## Built With
 
 * [Xcode](https://developer.apple.com/xcode/) - Integrated development environment
