@@ -61,7 +61,7 @@ _The iPhone X, XR, XS, and XS Max run with no issues, but are not configured for
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Maps.png"  width="400" height="685">
 
 ### Purchase Agreement
-<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Purchases%20Agreement.png"  width="400" height="685">
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Purchase%20Agreement.png"  width="400" height="685">
 
 ### Rental Agreement
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Rental%20Agreement.png"  width="400" height="685">
