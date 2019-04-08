@@ -32,6 +32,17 @@ These instructions will get you a copy of the project up and running on your loc
 _The iPhone X, XR, XS, and XS Max run with no issues, but are not configured for the display size_
 
 ## Features
+![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Login.png)
+![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Sign%20Up.png)
+![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Reset%20Password.png)
+![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Main%20Menu.png)
+![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Equipment%20Form.png)
+![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Add%20Equipment.png)
+![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Calendar.png)
+![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Maps.png)
+![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Agreement.png)
+![alt text](https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Signature.png)
+
 
 
 
