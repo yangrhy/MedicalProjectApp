@@ -57,7 +57,7 @@ _The iPhone X, XR, XS, and XS Max run with no issues, but are not configured for
 ### Calendar
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Calendar.png"  width="400" height="685">
 
-### Maps
+### Delivery Locations
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Maps.png"  width="400" height="685">
 
 ### Purchase Agreement
@@ -69,7 +69,7 @@ _The iPhone X, XR, XS, and XS Max run with no issues, but are not configured for
 ### Return Agreement
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Return%20Agreement.png"  width="400" height="685">
 
-### Signature
+### Signature for Agreements
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Signature.png"  width="400" height="685">
 
 
