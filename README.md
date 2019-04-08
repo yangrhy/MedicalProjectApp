@@ -32,15 +32,35 @@ These instructions will get you a copy of the project up and running on your loc
 _The iPhone X, XR, XS, and XS Max run with no issues, but are not configured for the display size_
 
 ## Features
+
+###Login
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Login.png"  width="400" height="685">
+
+###Sign Up
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Sign%20Up.png"  width="400" height="685">
+
+###Reset Password
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Reset%20Password.png"  width="400" height="685">
+
+###Main Menu
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Main%20Menu.png"  width="400" height="685">
+
+###Equipment Form
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Equipment%20Form.png"  width="400" height="685">
+
+###Adding Equipment
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Add%20Equipment.png"  width="400" height="685">
+
+###Calendar
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Calendar.png"  width="400" height="685">
+
+###Maps
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Maps.png"  width="400" height="685">
+
+###Agreement
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Agreement.png"  width="400" height="685">
+
+###Signature
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Signature.png"  width="400" height="685">
 
 
