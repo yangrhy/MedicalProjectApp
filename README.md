@@ -31,6 +31,9 @@ These instructions will get you a copy of the project up and running on your loc
 
 _The iPhone X, XR, XS, and XS Max run with no issues, but are not configured for the display size_
 
+## Features
+
+
 
 ## Built With
 
