@@ -51,7 +51,7 @@ _The iPhone X, XR, XS, and XS Max run with no issues, but are not configured for
 ### Adding Equipment
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Add%20Equipment.png"  width="400" height="685">
 
-### Calendar
+### Customer Information
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Customer%20Info.png"  width="400" height="685">
 
 ### Calendar
