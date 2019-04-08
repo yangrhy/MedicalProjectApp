@@ -51,14 +51,23 @@ _The iPhone X, XR, XS, and XS Max run with no issues, but are not configured for
 ### Adding Equipment
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Add%20Equipment.png"  width="400" height="685">
 
+### Customer Information
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Customer%20Info.png"  width="400" height="685">
+
 ### Calendar
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Calendar.png"  width="400" height="685">
 
 ### Maps
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Maps.png"  width="400" height="685">
 
-### Agreement
-<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Agreement.png"  width="400" height="685">
+### Purchase Agreement
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Purchases%20Agreement.png"  width="400" height="685">
+
+### Rental Agreement
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Rental%20Agreement.png"  width="400" height="685">
+
+### Return Agreement
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Return%20Agreement.png"  width="400" height="685">
 
 ### Signature
 <img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Signature.png"  width="400" height="685">
