@@ -938,7 +938,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agP-3i-WQm">
                                 <rect key="frame" x="25" y="522" width="144" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Signature for Rentals">
+                                <state key="normal" title="Rental Agreement">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -976,7 +976,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZ2-rb-nzp">
                                 <rect key="frame" x="8" y="385" width="174" height="129"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Signature for Purchases">
+                                <state key="normal" title="Purchase Agreement">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -986,7 +986,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Wm-nz-FCy">
                                 <rect key="frame" x="205" y="385" width="162" height="129"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Signature for Returns">
+                                <state key="normal" title="Return Agreement">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1349,10 +1349,10 @@
             </objects>
             <point key="canvasLocation" x="2117.5999999999999" y="1716.7916041979013"/>
         </scene>
-        <!--Signature for Purchases-->
+        <!--Purchase Agreement-->
         <scene sceneID="bZa-jS-tCj">
             <objects>
-                <viewController storyboardIdentifier="SignatureView" title="Signature for Purchases" id="QoA-IC-Acl" customClass="SignatureViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignatureView" title="Purchase Agreement" id="QoA-IC-Acl" customClass="SignatureViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mYf-sR-VPf"/>
                         <viewControllerLayoutGuide type="bottom" id="udK-Ni-BoC"/>
@@ -1446,10 +1446,10 @@
             </objects>
             <point key="canvasLocation" x="1448.8" y="2162.9685157421291"/>
         </scene>
-        <!--Signature for Returns-->
+        <!--Return Agreement-->
         <scene sceneID="x6M-hh-xrb">
             <objects>
-                <viewController storyboardIdentifier="ReturnView" title="Signature for Returns" id="l9I-Zd-uog" customClass="ReturnSignatureViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReturnView" title="Return Agreement" id="l9I-Zd-uog" customClass="ReturnSignatureViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Nod-tk-hhu"/>
                         <viewControllerLayoutGuide type="bottom" id="f31-L8-Sby"/>
@@ -1543,10 +1543,10 @@
             </objects>
             <point key="canvasLocation" x="2215" y="2398"/>
         </scene>
-        <!--Signature for Rentals-->
+        <!--Rental Agreement-->
         <scene sceneID="JaV-mY-f9l">
             <objects>
-                <viewController storyboardIdentifier="RentalSignatureView" title="Signature for Rentals" id="iuR-2f-sMS" customClass="RentalSignatureViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RentalSignatureView" title="Rental Agreement" id="iuR-2f-sMS" customClass="RentalSignatureViewController" customModule="MedicalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bSf-id-WkV"/>
                         <viewControllerLayoutGuide type="bottom" id="Iri-e9-Xqo"/>
