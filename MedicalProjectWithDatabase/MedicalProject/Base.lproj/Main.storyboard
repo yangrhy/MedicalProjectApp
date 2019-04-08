@@ -743,20 +743,20 @@
                                 </date>
                             </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Customer City" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RKx-5o-RMR">
-                                <rect key="frame" x="67" y="250" width="238" height="30"/>
+                                <rect key="frame" x="67" y="250" width="240" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="238" id="cyT-ng-hkm"/>
+                                    <constraint firstAttribute="width" constant="240" id="cyT-ng-hkm"/>
                                     <constraint firstAttribute="height" constant="30" id="pTI-Jv-HXS"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Customer Street" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIX-Gz-hLv">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Customer Street" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WIX-Gz-hLv">
                                 <rect key="frame" x="67" y="288" width="240" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="jZk-JS-XrY"/>
-                                    <constraint firstAttribute="width" constant="230" id="vkB-vq-VOy"/>
+                                    <constraint firstAttribute="width" constant="240" id="vkB-vq-VOy"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -806,7 +806,7 @@
                                 <rect key="frame" x="67" y="212" width="238" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="YEL-wS-C7e"/>
-                                    <constraint firstAttribute="width" constant="235" id="aHH-wT-fPE"/>
+                                    <constraint firstAttribute="width" constant="240" id="aHH-wT-fPE"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -816,7 +816,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="pM3-Rr-MCg" firstAttribute="leading" secondItem="ooE-WZ-1GB" secondAttribute="leadingMargin" constant="110" id="15c-9j-RZO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="WIX-Gz-hLv" secondAttribute="trailing" constant="62" id="1FE-7t-Fnf"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WIX-Gz-hLv" secondAttribute="trailing" constant="52" id="1FE-7t-Fnf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tIs-Ih-lhE" secondAttribute="trailing" constant="73" id="1Mm-uK-gHY"/>
                             <constraint firstItem="DMN-Do-FSe" firstAttribute="leading" secondItem="ooE-WZ-1GB" secondAttribute="leadingMargin" constant="110" id="1Nk-r5-XEU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MiZ-fk-zdU" secondAttribute="trailing" constant="123" id="1Ub-Hs-W1U"/>
@@ -827,7 +827,7 @@
                             <constraint firstItem="UjV-nG-jdx" firstAttribute="top" secondItem="MiZ-fk-zdU" secondAttribute="bottom" constant="8" id="9wh-FV-4yE"/>
                             <constraint firstItem="MiZ-fk-zdU" firstAttribute="leading" secondItem="ooE-WZ-1GB" secondAttribute="leadingMargin" constant="110" id="Aap-rE-QmF"/>
                             <constraint firstItem="tIs-Ih-lhE" firstAttribute="top" secondItem="UjV-nG-jdx" secondAttribute="bottom" constant="20" id="BmZ-XZ-gSZ"/>
-                            <constraint firstItem="jsN-Qa-rvm" firstAttribute="leading" secondItem="ooE-WZ-1GB" secondAttribute="leadingMargin" constant="54" id="DsH-Ec-a8Q"/>
+                            <constraint firstItem="jsN-Qa-rvm" firstAttribute="leading" secondItem="ooE-WZ-1GB" secondAttribute="leadingMargin" constant="51" id="DsH-Ec-a8Q"/>
                             <constraint firstItem="bT9-lI-EFa" firstAttribute="top" secondItem="zTs-Wf-5d5" secondAttribute="bottom" constant="26" id="Ekq-io-Kgc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3Sh-8f-A27" secondAttribute="trailing" constant="154" id="FD2-Gn-tKx"/>
                             <constraint firstItem="tIs-Ih-lhE" firstAttribute="leading" secondItem="oNT-xh-uWb" secondAttribute="trailing" constant="70" id="FLs-2E-aUv"/>
@@ -838,7 +838,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="zTs-Wf-5d5" secondAttribute="trailing" constant="73" id="JrQ-Ur-UaI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FfD-KL-HZH" secondAttribute="trailing" constant="52" id="K9V-5z-ra0"/>
                             <constraint firstItem="RKx-5o-RMR" firstAttribute="top" secondItem="jsN-Qa-rvm" secondAttribute="bottom" constant="8" id="KVB-Ic-Phh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="RKx-5o-RMR" secondAttribute="trailing" constant="54" id="MAA-Zv-3K6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RKx-5o-RMR" secondAttribute="trailing" constant="52" id="MAA-Zv-3K6"/>
                             <constraint firstItem="RKx-5o-RMR" firstAttribute="leading" secondItem="ooE-WZ-1GB" secondAttribute="leadingMargin" constant="51" id="MMZ-Cb-nXd"/>
                             <constraint firstItem="UjV-nG-jdx" firstAttribute="leading" secondItem="ooE-WZ-1GB" secondAttribute="leadingMargin" constant="66" id="OsV-Md-UZ2"/>
                             <constraint firstItem="oNT-xh-uWb" firstAttribute="leading" secondItem="ooE-WZ-1GB" secondAttribute="leadingMargin" constant="64" id="VHC-oC-xmi"/>
@@ -846,7 +846,7 @@
                             <constraint firstItem="WIX-Gz-hLv" firstAttribute="top" secondItem="RKx-5o-RMR" secondAttribute="bottom" constant="8" id="Wa4-NS-eJg"/>
                             <constraint firstItem="pM3-Rr-MCg" firstAttribute="top" secondItem="WIX-Gz-hLv" secondAttribute="bottom" constant="22" id="YCJ-Eh-wZp"/>
                             <constraint firstItem="MiZ-fk-zdU" firstAttribute="top" secondItem="pM3-Rr-MCg" secondAttribute="bottom" constant="70" id="Ycv-wg-2NH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jsN-Qa-rvm" secondAttribute="trailing" constant="54" id="aD0-KU-CqO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jsN-Qa-rvm" secondAttribute="trailing" constant="52" id="aD0-KU-CqO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DMN-Do-FSe" secondAttribute="trailing" constant="115" id="cKP-4X-s8Z"/>
                             <constraint firstItem="WIX-Gz-hLv" firstAttribute="leading" secondItem="ooE-WZ-1GB" secondAttribute="leadingMargin" constant="51" id="cP6-fF-JZ7"/>
                             <constraint firstItem="jsN-Qa-rvm" firstAttribute="top" secondItem="FfD-KL-HZH" secondAttribute="bottom" constant="8" id="cQf-St-jcf"/>
