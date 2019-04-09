@@ -41,6 +41,7 @@ class CalendarViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    // get data from database and populate into delivery and return lists of customers
     func retrieveData (date: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-YYYY"
@@ -206,7 +207,7 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell:UITableViewCell?
         
-        // populate the delivery table with data
+        // populate the delivery table with deliveries to be made for date
         if tableView == self.deliveryTableView {
             cell = tableView.dequeueReusableCell(withIdentifier: "deliveryCell", for: indexPath) as! CustomerTableViewCell
             
@@ -238,7 +239,7 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
             cell!.textLabel?.text = customerInfoString
             
         }
-        // populate the return table with data
+        // populate the return table with pick ups needed to be made for date
         if tableView == self.returnTableView {
             cell = tableView.dequeueReusableCell(withIdentifier: "returnCell", for: indexPath) as! CustomerTableViewCell
             
@@ -273,7 +274,8 @@ extension CalendarViewController : UITableViewDelegate, UITableViewDataSource {
         return cell!
     }
     
-    // selecting certain cell sends information to signature controller
+    // selecting certain cell sends information to the correct signature controller
+    // depending if it is a delivery (purchased, rented) or pick up return
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         if tableView == self.deliveryTableView {
