@@ -18,6 +18,61 @@ These instructions will get you a copy of the project up and running on your loc
 3. Select "MedicalProject.xcworkspace"
 4. Once Xcode has opened, select the play button
 
+### Compatible iPhone models
+
+* iPhone 6
+* iPhone 6 Plus
+* iPhone 6s
+* iPhone 6s Plus 
+* iPhone 7
+* iPhone 7 Plus
+* iPhone 8
+* iPhone 8 Plus
+
+_The iPhone X, XR, XS, and XS Max run with no issues, but are not configured for the display size_
+
+## Features
+
+### Login
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Login.png"  width="400" height="685">
+
+### Sign Up
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Sign%20Up.png"  width="400" height="685">
+
+### Reset Password
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Reset%20Password.png"  width="400" height="685">
+
+### Main Menu
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Main%20Menu.png"  width="400" height="685">
+
+### Equipment Form
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Equipment%20Form.png"  width="400" height="685">
+
+### Adding Equipment
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Add%20Equipment.png"  width="400" height="685">
+
+### Customer Information
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Customer%20Info.png"  width="400" height="685">
+
+### Calendar
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Calendar.png"  width="400" height="685">
+
+### Delivery Locations
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Maps.png"  width="400" height="685">
+
+### Purchase Agreement
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Purchase%20Agreement.png"  width="400" height="685">
+
+### Rental Agreement
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Rental%20Agreement.png"  width="400" height="685">
+
+### Return Agreement
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Return%20Agreement.png"  width="400" height="685">
+
+### Signature for Agreements
+<img src="https://github.com/Ashleyy545/MedicalProjectApp/blob/master/Screenshots/Signature.png"  width="400" height="685">
+
+
 ## Built With
 
 * [Xcode](https://developer.apple.com/xcode/) - Integrated development environment
