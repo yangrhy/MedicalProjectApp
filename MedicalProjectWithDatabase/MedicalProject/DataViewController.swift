@@ -34,6 +34,7 @@ class DataViewController: UIViewController{
             // Process Response
             self.processResponse(withPlacemarks: placemarks, error: error)
         }
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBOutlet weak var Date: UIDatePicker!
